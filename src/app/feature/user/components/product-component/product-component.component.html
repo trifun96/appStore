@@ -1,6 +1,6 @@
 <div class="search-container" #sideNav>
     <div class="form__group field">
-        <input type="input" class="form__field" placeholder="Search" name="search" id='search' [ngModel]="search"
+        <input type="input" class="form__field" placeholder="Search" name="search" id='search' [ngModel]="search" inputmode="text"
             (ngModelChange)="onSearch($event)" required />
     </div>
     <button type="submit" class="submit-button" (click)="openFilter()">

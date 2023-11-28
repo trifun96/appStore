@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ApiService } from 'src/app/core/services/api-service.service';
 import { ProductInterface } from 'src/app/shared/models/productInterface.interdace';
 
@@ -10,17 +11,32 @@ import { ProductInterface } from 'src/app/shared/models/productInterface.interda
 export class AllProductsComponent implements OnInit{
 public products:ProductInterface[]
 
-constructor(private api:ApiService){}
+constructor(private api:ApiService, private spinner:NgxSpinnerService){}
 
-ngOnInit(): void {
-  this.getProducts()
+ngOnInit() {
+  this.showSpinner();
+  this.getProducts();
 }
 
-getProducts() {
-  this.api.getProducts().subscribe((res) => {
-    this.products = Object.keys(res).map(key => ({ id: key, ...res[key] }));
-    console.log(this.products, 'res');
-  });
+private getProducts() {
+  this.api.getProducts().subscribe(
+    (res) => {
+      this.products = Object.keys(res).map((key) => ({
+        id: key,
+        ...res[key],
+      }));
+    },
+    (error) => console.error(error),
+    () => this.hideSpinner() 
+  );
+}
+
+private showSpinner(): void {
+  this.spinner.show();
+}
+
+private hideSpinner(): void {
+  this.spinner.hide();
 }
 
 }

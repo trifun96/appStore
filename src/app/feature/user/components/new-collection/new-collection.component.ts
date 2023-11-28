@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ApiService } from 'src/app/core/services/api-service.service';
 import { ProductInterface } from 'src/app/shared/models/productInterface.interdace';
 
@@ -8,18 +9,36 @@ import { ProductInterface } from 'src/app/shared/models/productInterface.interda
   styleUrls: ['./new-collection.component.css']
 })
 export class NewCollectionComponent implements OnInit{
-  constructor(private apiService:ApiService) {}
+  constructor(private apiService:ApiService, private spinner:NgxSpinnerService) {}
   newCollectionItems:ProductInterface[];
   filteredProducts:ProductInterface[]
 
-  ngOnInit(): void {
-    this.filterProducts()
+  ngOnInit() {
+    this.showSpinner();
+    this.filterAndMapProducts();
   }
 
-  filterProducts() {
-this.apiService.getProducts().subscribe((res) => {
-  this.filteredProducts = res;
-  this.newCollectionItems = this.filteredProducts.filter((element) => element.subCategory === 'Novo')
-})
+  private filterAndMapProducts() {
+    this.apiService.getProducts().subscribe(
+      (res) => {
+        this.filteredProducts = Object.keys(res).map((key) => ({
+          id: key,
+          ...res[key],
+        }));
+        this.newCollectionItems = this.filteredProducts.filter(
+          (element) => element.subCategory === 'Novo'
+        );
+      },
+      (error) => console.error(error),
+      () => this.hideSpinner()
+    );
+  }
+
+  private showSpinner(): void {
+    this.spinner.show();
+  }
+
+  private hideSpinner(): void {
+    this.spinner.hide();
   }
 }

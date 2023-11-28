@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'new-collection',component:NewCollectionComponent},
   {path:'man-collection', component:ManCollectionComponent},
   {path:'woman-collection', component:WomanCollectionComponent},
-  {path:'', redirectTo:'/login', pathMatch:'full'},
+  {path:'', redirectTo:'/product-page', pathMatch:'full'},
 ];
 
 @NgModule({
