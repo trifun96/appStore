@@ -11,7 +11,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
-  constructor(private cart: CartService, private favoriteService:FavoriteService, private toastr:ToastrService, private router:Router) {}
+  constructor(
+    private cart: CartService,
+    private favoriteService: FavoriteService,
+    private toastr: ToastrService,
+    private router: Router
+  ) {}
   @Input() data: ProductInterface;
   @Output() closeProductModal = new EventEmitter<any>();
   public selectedSize: string = '';
@@ -26,46 +31,61 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  toSelectedSize(size:string) {
-    this.selectedSize = size
+  toSelectedSize(size: string) {
+    this.selectedSize = size;
   }
 
-  addToCartItem(data: ProductInterface) {
-    if (this.selectedSize) {
+  addToCartItem(product: ProductInterface) {
+    if (!this.selectedSize) {
+      this.toastr.warning('Please select a size before adding to the cart.');
+      return;
+    }
+
+    const isProductSameSize = (item) =>
+      item.id === product.id && item.size === this.selectedSize;
+    const existingProductIndex =
+      this.cart.cartItemList.findIndex(isProductSameSize);
+
+    if (existingProductIndex !== -1) {
+      this.cart.cartItemList[existingProductIndex].quantity += 1;
+    } else {
       const productWithSize: ProductInterface = {
+        ...product,
+        size: this.selectedSize,
+        quantity: 1,
+      };
+
+      this.cart.cartItemList.push(productWithSize);
+    }
+
+    this.updateCart();
+  }
+
+  private updateCart() {
+    this.cart.cartList$.next(this.cart.cartItemList);
+    this.cart.totalItem$.next(this.cart.cartItemList.length);
+    this.cart.saveCartItemsToLocalStorage();
+
+    this.selectedSize = '';
+    this.closeProductModal.emit();
+    this.toastr.success('You have successfully added the product to the cart.');
+  }
+
+  buyNowProduct(data: ProductInterface) {
+    if (this.selectedSize) {
+      const productWithData: ProductInterface = {
         ...data,
         size: this.selectedSize,
       };
-
-      console.log(productWithSize, 'test')
-      this.cart.addToCart(productWithSize);
-  
-      this.selectedSize = '';
-  
-      this.closeProductModal.emit();
-  
-      this.toastr.success('You have successfully added the product to the cart.');
-    } else {
-      this.toastr.warning('Please select a size before adding to the cart.');
-    }
-  }
-
-  buyNowProduct(data:ProductInterface) {
-    if(this.selectedSize) {
-      const productWithData:ProductInterface = {
-        ...data,
-        size:this.selectedSize
-      }
       this.cart.addToCart(productWithData);
       this.closeProductModal.emit();
-      this.toastr.success('You are successfully added product to cart.')
-      this.router.navigate(['/cart'])
+      this.router.navigate(['/order-form']);
     } else {
-      this.toastr.warning('Please select a size before adding to the cart.')
+      this.toastr.warning('Please select a size before going to payment');
     }
   }
 
-  addToFavorite(favoriteData:ProductInterface) {
+  addToFavorite(favoriteData: ProductInterface) {
     this.favoriteService.addFavoriteItem(favoriteData);
     this.toastr.success('You are successfully added product to favorite.');
   }
