@@ -22,19 +22,9 @@
     margin-top: 10px;
   }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (max-width: 850px) {
     .footer {
-      flex-direction: row; /* Ako je širina ekrana veća od 600 piksela, postavite orijentaciju reda */
-    }
-
-    .footer p {
-      margin-top: 0; /* Ponovno postavite marginu ako je širina ekrana veća od 600 piksela */
-    }
-  }
-
-  @media only screen and (max-width: 450px) {
-    .footer {
-      flex-direction: row; /* Ako je širina ekrana veća od 600 piksela, postavite orijentaciju reda */;
+      flex-direction: row;
     }
 
   

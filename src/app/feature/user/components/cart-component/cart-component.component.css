@@ -380,69 +380,7 @@ a:hover {
   margin: 0 -50px 0 0 !important;
 }
 
-@media only screen and (max-width: 600px) {
-  .cart-container {
-    margin-top: 50px;
-    height: auto;
-  }
-
-  #site-header h1 {
-    padding: 20px 0;
-  }
-
-  .product {
-    height: auto;
-  }
-
-  .product header {
-    margin: 0 0 20px 0;
-
-  }
-
-  .content {
-    font-size: 22px;
-    font-weight: 200;
-  }
-
-  .product header h3 {
-    bottom: 10px;
-  }
-
-  .product .content {
-    width: 100%;
-  }
-
-  .product footer .price,
-  .product footer .full-price {
-    font-size: 22px;
-    padding: 0 10px;
-  }
-
-  .qt,
-  .qt-plus,
-  .qt-minus {
-    width: 50px;
-  }
-
-  #site-footer h1 {
-    padding: 20px 10px;
-  }
-
-  .btn {
-    width: 100%;
-    font-size: 22px;
-  }
-
-  .type,
-  .color {
-    width: 100%;
-  }
-
-
-}
-
-
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 850px) {
 
   .cart-container {
     padding: 100px;

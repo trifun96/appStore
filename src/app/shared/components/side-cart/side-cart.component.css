@@ -142,6 +142,7 @@
 
     .product-image img {
         width: 300px;
+   padding: 40px;
     }
 
     .close-img {
@@ -166,18 +167,18 @@
         font-weight: 500;
     }
 
-    .content-side-cart[_ngcontent-ng-c2289772329] .img[_ngcontent-ng-c2289772329] {
-        width: 31px;
-        height: 31px;
+    .content-side-cart .img {
+        width: 30px;
+        height: 30px;
         position: absolute;
         right: 0;
         margin-right: 20px;
         cursor: pointer;
-        margin-top: 15px;
+        margin-top: 40px;
     }
 
     .item-content {
-        padding: 20px;
+        padding: 45px 0px 0px 0px;
     }
 
     .item-content h4 {

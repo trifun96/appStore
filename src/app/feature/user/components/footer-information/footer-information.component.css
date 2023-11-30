@@ -57,65 +57,7 @@
     display: flex;
   }
 
-  @media only screen and (max-width: 600px) {
-    .wrapper {
-        height: auto; 
-        padding: 0;
-    }
-
-    .info {
-      width: 1200px;
-        flex-direction: column; 
-        background-color: rgb(252, 243, 243);
-        padding: 20px 10px; 
-        text-align: center;
-    }
-
-    .info h1 {
-        font-size: 33px;
-        margin-top: 20px;
-    }
-
-    .flex {
-        flex-direction: column; 
-        margin-top: 10px;
-        width: 100%; 
-    }
-
-    img{
-    padding: 20px;
-    }
-    .flex p {
-        margin: 5px 0; 
-        font-size: 25px; 
-        text-align: center; 
-    }
-
-    .content {
-        flex-direction: column; 
-        padding: 40px;
-        align-items: center;
-    }
-
-    .content p {
-        margin-top: 5px; 
-        font-size: 25px;
-        text-align: center;
-        padding: 10px;
-    }
-
-    .content h6{
-      font-size: 26px;
-      line-height: normal;
-    }
-
-    mat-icon{
-      font-size: 50px;
-      padding: 30px;
-    }
-}
-
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 850px) {
   .wrapper {
       height: auto; 
       padding: 0;

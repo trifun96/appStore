@@ -41,46 +41,7 @@ h1 {
    
 }
 
-@media only screen and (max-width: 600px) {
-    .wrapper {
-        height: auto; 
-        width: 100%;
-        padding: 0;
-    }
-
-    .info {
-        width: 811px;
-        height: auto;
-      padding: 121px;
-    }
-
-    .flex {
-        width: 100%; 
-    }
-
-    .flex span {
-        margin-right: 0; 
-        margin-bottom: 5px; 
-        text-align: center; 
-    }
-
-    .flex span .mat-icon {
-        margin-right: 5px; 
-        padding: 10px;
-        font-size: 33px;
-    }
-
-    h1 {
-        font-size: 30px; 
-        line-height: 1.5; 
-        text-align: center; 
-        margin-top: 8px;
-    }
-
-  
-}
-
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 850px) {
     .wrapper {
         height: auto; 
         width: 100%;

@@ -38,47 +38,8 @@
     cursor: pointer;
     font-size: 17px;
   }
- 
-  @media only screen and (max-width: 600px) {
-    .container {
-  height: 70vh;
-        margin-top: 20px; /* Prilagodite margine prema potrebi */
-        background-color: white;
-        border-radius: 20px;
-    }
 
-    .center {
-        position: relative;
-        width: 1000px;
-    }
-
-    h4 {
-        font-weight: 200; /* Prilagodite font-weight prema potrebi */
-        font-size: 22px;
-    }
-
-    h2{
-      font-size: 35px;
-    }
-
-    .center h5 {
-        font-size: 30px; /* Prilagodite veličinu fonta prema potrebi */
-        font-weight: 200; /* Prilagodite font-weight prema potrebi */
-    }
-
-    .center img{
-      width: 150px;
-    }
-
-    .submit-button {
-        padding: 10px; /* Prilagodite padding dugmeta prema potrebi */
-        width: 80%; /* Prilagodite širinu dugmeta prema potrebi */
-        font-size: 14px; /* Prilagodite veličinu fonta dugmeta prema potrebi */
-        margin-top: 20px; /* Prilagodite marginu dugmeta prema potrebi */
-    }
-}
-
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 850px) {
   .container {
 height: 90vh;
       margin-top: 20px; 

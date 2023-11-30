@@ -23,7 +23,7 @@
     margin: 90px;
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 70px;
 }
 
 .search p {
@@ -173,69 +173,7 @@ mat-card-content p {
     font-size: 16px;
 }
 
-@media only screen and (max-width: 600px) {
-    .product-container {
-        margin: 0 auto;
-        width: 1050px;
-        margin-left: 50px;
-        padding: 0px 50px 50px 50px;
-    }
-
-    .paginator {
-        margin: 0 auto;
-        text-align: center;
-        margin-left: 270px;
-    }
-
-    .search-container {
-        width: 900px;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 120px;
-    }
-
-    .submit-button {
-        position: absolute;
-        right: -577px;
-        width: 160px;
-    }
-
-    .heart-icon {
-        display: none;
-    }
-
-    .container img {
-        width: 451px;
-    }
-
-    .filter-button p {
-        font-size: 35px;
-    }
-
-    mat-icon {
-        font-size: 31px;
-    }
-
-    mat-card-subtitle {
-        font-size: 31px;
-    }
-
-    .price-container[_ngcontent-ng-c4000375011][_ngcontent-ng-c4000375011] {
-        padding: 10px;
-        background-color: red;
-        color: white;
-        font-size: 35px;
-    }
-
-}
-
-.form__field {
-    font-size: 30px;
-    margin-left: 30px;
-}
-
-
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 850px) {
     .product-container {
         margin: 0 auto;
         width: 1124px;

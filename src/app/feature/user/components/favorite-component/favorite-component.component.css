@@ -83,45 +83,7 @@
     margin-top: 30px;
   }
 
-  
-@media only screen and (max-width: 600px) {
-mat-card-subtitle{
-  font-size: 25px;
-  padding: 0px 0px 5px 0px;
-}
-
-.price-container{
-  font-size: 22px;
-}
-
-.container{
-  height: 20vh;
-}
-
-.center{
-  position: relative;
-  width: 900px;
-  background-color: white;
-}
-
-.center h5{
-  font-size: 45px;
-  padding: 5px;
-}
-
-.center h4{
-  font-size: 35px;
-  padding: 15px;
-  line-height: normal;
-}
-
-.center button{
-  font-size: 35px;
-}
-}
-  
-
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 850px) {
   .product-container {
     margin: 0 auto;
     margin-top: 140px;
