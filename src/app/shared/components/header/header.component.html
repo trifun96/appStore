@@ -15,9 +15,6 @@
                     <p routerLink="/woman-collection" (click)="closeMenu()">Woman's Collection</p>
                     <p routerLink="/man-collection" (click)="closeMenu()">Man's Collection</p>
                     <p routerLink="/new-collection" (click)="closeMenu()">New Collection</p>
-                    <p routerLink="/sign-up" (click)="closeMenu()">Sign Up</p>
-                    <p routerLink="/login" (click)="closeMenu()">Login</p>
-                 
                 </ul>
             </div>
             <div class="menu-logo">
@@ -38,12 +35,15 @@
 
     <div class="nav" *ngIf="!isLoggedIn && !isAdmin()">
         <div class="items">
-            <a routerLink="/product-page" routerLinkActive="active">{{"product-page" | translate}}</a>
-            <a routerLink="/sign-up" routerLinkActive="active">{{"sign-up" | translate}}</a>
-            <a routerLink="/login" routerLinkActive="active">{{"login" | translate}}</a>
+            <div class="person">
+                <mat-icon a routerLink="/login">person</mat-icon>
+            </div>
         </div>
         <div class="menuTab">
-            <i class="material-icons" routerLink="/favorite-cart">favorite</i>
+            <div class="mobile-person">
+            <span class="material-icons" routerLink="/login">person</span>
+        </div>
+                <i class="material-icons" routerLink="/favorite-cart">favorite</i>
             <span class="badge-size">{{totalFavoriteItem$ | async}}</span>
             <span class="material-icons" routerLinkActive="active" (click)="openSideCart()">shopping_cart</span>
             <span class="badge-size">{{totalItem$ | async}}</span>
@@ -51,7 +51,6 @@
     </div>
 
     <div class="nav" *ngIf="isLoggedIn && !isAdmin()">
-        <a class="product-page" routerLink="/product-page" routerLinkActive="active">{{"product-page" | translate}}</a>
         <i class="material-icons" routerLink="/favorite-cart">favorite</i>
         <span class="badge-size">{{totalFavoriteItem$ | async}}</span>
         <span class="material-icons" routerLinkActive="active">shopping_cart</span>
@@ -78,15 +77,7 @@
         <app-dropdown-component></app-dropdown-component>
     </div>
 </div>
-<div class="localization">
-    <label for="">
-        <select #langSelect (change)="translate.use(langSelect.value)">
-            <option *ngFor="let lang of translate.getLangs()">
-                <p>{{ lang }}</p>
-            </option>
-        </select>
-    </label>
-</div>
+
 <div *ngIf="isOpenSideCart">
     <app-side-cart (closeEvent)="closeSideCart()"></app-side-cart>
 </div>

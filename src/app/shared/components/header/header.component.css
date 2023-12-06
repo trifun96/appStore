@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .logo {
@@ -26,6 +27,11 @@ body {
 
 .logo-item{
     margin-top: 10px;
+}
+
+.person mat-icon{
+    margin: 5px;
+    font-size: 30px;
 }
 
 .category{
@@ -182,6 +188,10 @@ h2 {
         display: none;
     }
 
+    .mobile-person{
+        display: none;
+    }
+
     .menu-logo{
         display: none;
     }
@@ -223,9 +233,12 @@ h2 {
 
  .menu-logo{
     display: block;
-    margin-left:240px;
+    margin-left:25px;
     margin-top: 10px;
-    width: 400px;
+ }
+
+ .mobile-person{
+    display: block;
  }
 
  .menu-logo h1{
@@ -240,14 +253,12 @@ h2 {
     position: relative;
     display: flex;
     justify-content: space-between;
-    left: 160px;
  }
 
  .header{
-    width: auto;
+    max-width: 850px;
+    margin: 0 auto;
  }
-
-
 
  .category{
     display: none;
@@ -262,7 +273,7 @@ h2 {
  }
 
  .navbar{
-    margin-left: 50px;
+    margin-left: 15px;
  }
 
  .navbar a {
@@ -328,7 +339,7 @@ h2 {
 }
 
 .material-icons{
-    font-size: 50px;
+    font-size: 60px;
     margin: 10px;
 }
 

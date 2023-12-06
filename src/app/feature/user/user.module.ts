@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserPageComponent } from './components/user-page/user-page.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { MatStepperModule } from '@angular/material/stepper';
@@ -23,12 +21,13 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ClickOutsideDirective } from 'src/app/shared/directives/clickOutside.directive';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
     UserPageComponent,
-    SignUpComponent,
-    LoginComponent,
     ProductComponent,
     CartComponent,
     FavoriteComponent,
@@ -41,6 +40,9 @@ import { MatButtonModule } from '@angular/material/button';
     WomanCollectionComponent,
     AllProductsComponent,
     ClickOutsideDirective,
+    RegistrationComponent,
+    RegistrationFormComponent,
+    ModalComponent
 
   ],
 

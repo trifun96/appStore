@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .form-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .text-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .flex-container > div {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    font-size: 18px;
+  }
+
+  #mobilePhone {
+    width: 49%;
+  }
+  
+  h4{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    text-decoration: underline;
+  }
+
+  h6{
+    font-size: 18px;
+    font-weight: 100;
+  }
+  
+  .form-container h5{
+    font-size: 17px;
+    padding-bottom: 30px;
+    font-weight: 100;
+  
+  }
+
+  button {
+    background-color: #333;
+    color: white;
+    width: 30%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 100;
+    margin-top: 20px;
+    padding: 5px;
+  }
+
+  button p{
+    margin-top: 10px;
+  }
+  
+  @media only screen and (max-width: 850px) {
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        padding: 45px;
+        margin-top: 150px;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #mobilePhone {
+        width: 99%;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 30px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid lightgray;
+        font-size: 45px;
+      }
+
+      h4{
+        font-size: 50px;
+      }
+
+      h6{
+        font-size:45px;
+        font-weight: 100;
+        margin-top: 50px;
+        line-height: normal;
+      }
+
+     
+  .form-container h5{
+    font-size: 45px;
+    padding: 70px 0 70px 0;
+    font-weight: 100;
+  
+  }
+
+  button{
+    padding: 15px;
+    margin-top: 70px;
+    width: 40%;
+}
+
+button p{
+    font-size: 42px
+}
+  }

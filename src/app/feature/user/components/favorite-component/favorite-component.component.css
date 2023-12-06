@@ -29,10 +29,6 @@
   }
   
   .center{
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     border: 1px solid rgb(220, 213, 213);
     border-radius: 10px;
@@ -108,6 +104,22 @@ width: 500px;
 .card-title img{
   width: 25px;
   height: 37px;
+}
+
+.center h5{
+  font-size: 45px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.center h4{
+  font-size: 40px;
+  font-weight: 200;
+  line-height: normal;
+}
+
+.add-to-cart{
+  font-size: 40px;
 }
 
   }

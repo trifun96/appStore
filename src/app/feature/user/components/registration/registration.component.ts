@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth-service.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { AuthService } from 'src/app/core/services/auth-service.service';
-import { LoginRequestInterface } from 'src/app/shared/models/loginRequestInterface.interface';
 import { authActions } from '../../store/actions';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class LoginComponent implements OnInit {
-  public registrationUser: LoginRequestInterface;
+export class RegistrationComponent {
+  public isShowRegistrationForm:boolean = false
 
   constructor(
     private auth: AuthService,
@@ -22,6 +21,15 @@ export class LoginComponent implements OnInit {
     private store: Store,
     private toastr: ToastrService
   ) {}
+
+  openRegistrationForm() {
+    this.isShowRegistrationForm = true;
+    console.log('re')
+  }
+
+  closeRegistrationModal(){
+    this.isShowRegistrationForm = false
+  }
 
   ngOnInit(): void {
     if (this.auth.isLoggedIn()) {

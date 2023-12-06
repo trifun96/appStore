@@ -49,9 +49,10 @@ h1 {
     }
 
     .info {
-        width: 980px;
+        width: 1140px;
         height: auto;
         margin: 0;
+        padding: 40px;
     }
 
     .flex {

@@ -1,0 +1,38 @@
+<div class="checkout-container">
+    <div class="form-container">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h4>IMATE NALOG?</h4>
+            <h5>Molimo vas da uneste vase podatke.</h5>
+            <div>
+                <input type="text" id="firstName" name="firstName" required formControlName="email" placeholder="Email*">
+            </div>
+
+            <div>
+                <input type="text" id="lastName" name="lastName" required formControlName="password"
+                    placeholder="Lozinka*">
+            </div>
+            <button type="submit" class="submit-button">
+                <div class="filter-button">
+                    <p>PRIJAVI SE</p>
+                </div>
+            </button>
+        </form>
+    </div>
+    <div class="registration">
+        <h4>REGISTRACIJA NALOGA</h4>
+        <h5>Klikom na dugme "napravi nalog" ulazite u proceduru registracije.</h5>
+        <h6>Kreiranje naloga omogućava brže zaključivanje narudžbina, kreiranje više adresa za isporuku kao i mogućnost
+            praćenja narudžbina.</h6>
+        <button type="submit" class="registration-button">
+            <div class="filter-button">
+                <p (click)="openRegistrationForm()">NAPRAVI NALOG</p>
+            </div>
+        </button>
+    </div>
+</div>
+
+<div *ngIf="isShowRegistrationForm">
+    <app-modal (closeEvent)="closeRegistrationModal()">
+        <app-registration-form></app-registration-form>
+    </app-modal>
+</div>
