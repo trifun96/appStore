@@ -44,6 +44,7 @@ export class AddProductFormComponent implements OnInit {
       this.productForm.controls['quantity'].setValue(this.editData.quantity);
       this.productForm.controls['price'].setValue(this.editData.price);
       this.productForm.controls['category'].setValue(this.editData.category);
+      this.productForm.controls['suitCategory'].setValue(this.editData.suitCategory);
       this.productForm.controls['size'].setValue(this.editData.size);
       this.productForm.controls['subCategory'].setValue(
         this.editData.subCategory
@@ -60,6 +61,7 @@ export class AddProductFormComponent implements OnInit {
     quantity: new FormControl(this.productsModelObj.quantity),
     price: new FormControl(this.productsModelObj.price),
     category: new FormControl(this.productsModelObj.title),
+    suitCategory:new FormControl(this.productsModelObj.suitCategory),
     subCategory: new FormControl(this.productsModelObj.subCategory),
     size: new FormControl(this.productsModelObj.title),
   });
@@ -82,6 +84,7 @@ export class AddProductFormComponent implements OnInit {
     this.productsModelObj.quantity = this.productForm.value.quantity;
     this.productsModelObj.price = this.productForm.value.price;
     this.productsModelObj.category = this.productForm.value.category;
+    this.productsModelObj.suitCategory = this.productForm.value.suitCategory;
     this.productsModelObj.subCategory = this.productForm.value.subCategory;
     this.productsModelObj.size = this.productForm.value.size;
 

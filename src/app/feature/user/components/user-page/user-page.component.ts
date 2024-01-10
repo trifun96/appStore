@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { Observable, combineLatest, take } from 'rxjs';
-import { productAction } from 'src/app/feature/admin/store/actions';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/core/services/product-service';
 import { ProductInterface } from 'src/app/shared/models/productInterface.interdace';
 
 @Component({
@@ -9,15 +8,24 @@ import { ProductInterface } from 'src/app/shared/models/productInterface.interda
   templateUrl: './user-page.component.html',
   styleUrls: ['./user-page.component.css'],
 })
-export class UserPageComponent implements OnInit {
-  products$: Observable<ProductInterface>;
-  constructor(private store: Store) {
+export class UserPageComponent {
+  currentProduct: ProductInterface;
+
+  constructor(private productService: ProductService, private router:Router) {
+   this.productService.products$.subscribe(products => {
+      this.currentProduct = products.length > 0 ? products[0] : null;
+    });
   }
 
-  ngOnInit(): void {
-    this.store.dispatch(productAction.getProducts());
-    this.store.subscribe(
-      (state: any) => (this.products$ = state.productReducer.currentArticle)
-    );
+  nextProduct(): void {
+    this.currentProduct = this.productService.getNextProduct();
+  }
+
+  previousProduct(): void {
+    this.currentProduct = this.productService.getPreviousProduct();
+  }
+
+  toNavigate(){
+    this.router.navigate(['/man-sweatshirt'])
   }
 }

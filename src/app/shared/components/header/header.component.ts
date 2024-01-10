@@ -16,9 +16,17 @@ export class HeaderComponent implements OnInit {
   currentUser: User | null;
   totalItem$: Observable<number> = new Observable<number>();
   totalFavoriteItem$: Observable<number> = new Observable<number>();
-  public isClicked:boolean;
+  public isShowMenu:boolean;
   public mobileMenu:boolean = false;
   public isOpenSideCart:boolean = false
+
+  menuItems = [
+    { label: 'Home', link: '/' },
+    { label: 'Product Page', link: '/product-page' },
+    { label: "Woman's Collection", link: '/woman-collection' },
+    { label: "Man's Collection", link: '/man-collection' },
+    { label: 'New Collection', link: '/new-collection' }
+];
 
   constructor(
     private authService: AuthService,
@@ -53,6 +61,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleMenu() {
+    this.isShowMenu = !this.isShowMenu
     var navMenu = document.getElementById("navMenu");
     navMenu.style.display = (navMenu.style.display === "block") ? "none" : "block";
 }
@@ -60,6 +69,7 @@ export class HeaderComponent implements OnInit {
   closeMenu() {
     const navMenu = document.getElementById("navMenu");
     navMenu.style.display = "none"
+    this.isShowMenu = false;
   }
 
 toggleDropdown() {

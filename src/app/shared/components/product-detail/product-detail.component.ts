@@ -22,6 +22,8 @@ export class ProductDetailComponent implements OnInit {
   public selectedSize: string = '';
 
   ngOnInit(): void {
+
+    console.log(this.data, 'data')
     const sizes = document.querySelectorAll('.circle-icon');
 
     sizes.forEach((size) => {

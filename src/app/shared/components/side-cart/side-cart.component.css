@@ -1,3 +1,4 @@
+
 .content {
     height: 100vh;
     right: 0;
@@ -58,7 +59,7 @@
     right: 0;
     margin-right: 20px;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .items-cart {
@@ -94,7 +95,7 @@
 
 .item-content {
     flex: auto;
-    padding: 10px;
+    padding: 0px 0px 10px 10px;
 }
 
 .item-content h4 {
@@ -128,109 +129,47 @@
     top: 500px;
     text-align: center;
     cursor: pointer;
-
 }
 
-
-@media only screen and (max-width: 767px) {
+@media (max-width: 767px) {
     .content {
-        height: 329vh;
-        width: 1222px;
-        border-radius: 0;
-        box-shadow: none;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 411px;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        padding: 10px;
+        position: fixed;
     }
 
-    .product-image img {
-        width: 300px;
-   padding: 40px;
+    .item-content{
+        padding: 0px 10px 0px 10px;
     }
 
-    .close-img {
-        width: 50px;
-        margin-left: 30px;
-    }
-
-    .title p {
-        font-size: 45px;
-        margin-top: 9px;
-    }
-
-    .title-container span {
-        font-size: 40px;
-        margin-top: 20px;
-        margin-right: 20px;
-    }
-
-    .items-cart {
-        font-size: 37px;
-        margin-top: 30px;
-        font-weight: 500;
-    }
-
-    .content-side-cart .img {
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        right: 0;
-        margin-right: 20px;
-        cursor: pointer;
-        margin-top: 40px;
-    }
-
-    .item-content {
-        padding: 45px 0px 0px 0px;
-    }
-
-    .item-content h4 {
-        font-size: 40px;
-        font-weight: 500;
-    }
-
-    .item-content p {
-        font-size: 40px;
-        line-height: 1;
-        font-weight: 500;
-    }
-
-    .qt-minus,
-    .qt-plus,
-    .qt {
-        font-size: 55px;
-        margin-top: 10px;
+    .items-cart{
+        margin-right: 17px;
     }
 
     .submit-button {
-        position: fixed;
-        background-color: #333;
-        color: rgb(0, 0, 0);
         width: 100%;
-        margin-left: 16px;
-        cursor: pointer;
-        font-size: 40px;
-        bottom: 100px;
+        margin-left:-10px;
+        bottom: 54px;
     }
 
-    .content-side-cart[_ngcontent-ng-c1330777225] {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 65px;
-        padding: 30px;
+    .title-container{
+        flex: none;
+        margin-top: 7px;
+        font-weight: 700;
+        font-size: 20px;
+        margin-right: 50px;
     }
 
-    mat-nav-list {
-        margin-top: 40px;
+    .content-side-cart .img {
+        margin-top: 3px;
+        right: 43px;
     }
 
-    button[_ngcontent-ng-c1330777225] {
-        position: fixed;
-        background-color: #333;
-        color: rgb(0, 0, 0);
-        width: 75%;
-        margin-left: 144px;
-        cursor: pointer;
-        font-size: 40px;
-        bottom: 100px;
-        padding: 5px;
     }
-
-}

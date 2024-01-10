@@ -1,0 +1,411 @@
+.discount-banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.discount-banner .content{
+    margin-top:70px;
+    margin-left: 16px;
+    text-align: center;
+}
+
+.banner-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.discount-banner::before {
+    content: '';
+    background-image: url('/assets/images/duks1.jfif');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.9);
+    z-index: -1;
+}
+
+.discount-banner1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 10px;
+    padding: 70px;
+}
+
+.discount-banner1:hover::before {
+    filter: brightness(0.5);
+    transition: 0.6s;
+}
+
+.discount-banner1::before {
+    content: '';
+    background-image: url('/assets/images/111.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.8);
+    z-index: -1;
+}
+
+.discount-banner2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 10px;
+    padding: 70px;
+}
+
+.discount-banner2::before {
+    content: '';
+    background-image: url('/assets/images/banner-tshirt.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.6);
+    z-index: -1;
+}
+
+.discount-banner2:hover::before {
+    filter: brightness(0.5);
+    transition: 0.6s;
+}
+
+h1 {
+    font-size: 43px;
+    color: #e9e9e9;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 35px;
+    color: #e9e9e9;
+}
+
+#product-container {
+    display: flex;
+    overflow: hidden;
+    width: 300px;
+}
+
+.product {
+    width: 300px; 
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+#prev-btn, #next-btn {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+.example-card {
+    width: 300px;
+    margin: 20px;
+  }
+  
+  .heart-icon {
+    font-family: 'Material Icons';
+    font-size: 27px;
+    cursor: pointer;
+    color: rgba(255, 0, 0, 0.5);
+  }
+  
+  .container {
+    position: relative;
+    background-color: rgb(252, 243, 243);
+  }
+  
+  .container img {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .card-title {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .price-container {
+    color: #fff;
+    font-size: 14px;
+    padding: 1px;
+    background: #614848;
+    padding: 3px 20px 3px 20px;
+  }
+
+  mat-icon{
+    font-size: 25px !important;
+  }
+
+@media (min-width: 768px) and (max-width: 2000px) {
+    .discount-banner {
+        height: 90vh;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 75px;
+        font-weight: 200;
+        text-transform: uppercase;
+        color: #e9e9e9;
+    }
+
+    p {
+        padding: 30px;
+        color: #e9e9e9;
+    }
+
+    h4{
+        color: #e9e9e9;
+    }
+
+    .discount-banner1 {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        margin: 10px;
+        padding: 70px;
+    }
+    
+    .discount-banner1:hover::before {
+        filter: brightness(0.8);
+        transition: 0.8s;
+    }
+    
+    .discount-banner1::before {
+        content: '';
+        background-image: url('/assets/images/111.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: brightness(1);
+        z-index: -1;
+    }
+
+    .discount-banner1 h1{
+        font-size: 40px;
+        text-align: center;
+        line-height: normal;
+    }
+
+    .discount-banner1 h5{
+        font-size: 25px;
+        color: #e9e9e9;
+        line-height: normal;
+    }
+
+    .discount-banner1 h2{
+        font-size: 75px;
+        color: #e9e9e9;
+        line-height: normal;
+        font-weight: 200;
+        margin-top: 30px;
+    }
+
+    .discount-banner2 {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        margin: 10px;
+        padding: 70px;
+    }
+    
+    .discount-banner2::before {
+        content: '';
+        background-image: url('/assets/images/banner-tshirt.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: brightness(0.8);
+        z-index: -1;
+    }
+    
+    .discount-banner2:hover::before {
+        filter: brightness(0.6);
+        transition: 0.6s;
+    }
+
+    .discount-banner2 h2{
+        font-size: 75px;
+        color: #e9e9e9;
+        font-weight: 200;
+
+    }
+
+    .discount-banner2 h5{
+        font-size: 20px;
+        line-height: normal;
+        color: #e9e9e9;
+    }
+}
+
+.banner-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.discount-banner1{
+    height: 50vh;
+    width: 42%;
+}
+
+.discount-banner2{
+    height: 50vh;
+    width:41%;
+}
+
+@media (max-width: 767px) {
+    .discount-banner {
+        height: 60vh;
+    }
+
+    .banner-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 28px;
+        font-weight: 200;
+        margin-top: 10px;
+        text-transform: uppercase;
+
+    }
+
+    .discount-banner h4{
+        font-size: 10px;
+    }
+
+    .discount-banner1 {
+        margin: 10px 10px 10px 10px;
+        padding: 0;
+        width: 95%;
+    }
+
+    .discount-banner2 {
+        margin: 10px 10px 10px 10px;
+        padding: 0;
+        width: 95%;
+    }
+
+    .discount-banner1 h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .discount-banner1 h2 {
+        font-size: 50px;
+        font-weight: 100;
+        margin-top: 30px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .discount-banner1 h5 {
+        font-size: 16px;
+        color: #e1dede;
+    }
+
+    .discount-banner2 h2 {
+        font-size: 50px;
+        margin-top: 70px;
+        text-align: center;
+        font-weight: 100;
+        text-transform: uppercase;
+
+    }
+
+    .discount-banner2 h5 {
+        font-size: 16px;
+        padding: 30px;
+        text-align: center;
+        color: #e1dede;
+    }
+
+    h2 {
+        font-size: 30px;
+        color: #e1dede;
+        font-weight: 600;
+        margin: 2px;
+    }
+
+    h3 {
+        font-size: 25px;
+        color: #e1dede;
+        font-weight: 600;
+
+    }
+
+    h4 {
+        color: #e1dede;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 20px;
+        margin-top: 15px;
+        font-weight: 400;
+        color: #e1dede;
+
+    }
+}

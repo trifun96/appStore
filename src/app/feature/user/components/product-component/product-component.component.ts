@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
@@ -22,10 +23,12 @@ export class ProductComponent {
   public selectedPrice: number | null = null;
   public selectedProduct: ProductInterface = null;
   public search: string;
+
   page: number = 1;
+
   public showSideNav: boolean = false;
   public showProductDetail: boolean = false;
-  constructor(private store: Store, private spinner: NgxSpinnerService, private favoriteService:FavoriteService, private toastr:ToastrService) {}
+  constructor(private store: Store, private spinner: NgxSpinnerService, private favoriteService:FavoriteService, private toastr:ToastrService, private router:Router) {}
 
   ngOnInit(): void {
     this.store.dispatch(productAction.getProducts());
@@ -41,6 +44,7 @@ export class ProductComponent {
         }
       });
   }
+
 
   onSearch(newValue: string) {
     this.search = newValue;
@@ -125,8 +129,10 @@ export class ProductComponent {
   }
 
   openProductDetailModal(product: ProductInterface) {
-    this.showProductDetail = true;
-    this.selectedProduct = product;
+    if (product){
+      this.showProductDetail = true;
+      this.selectedProduct = product;
+    }
   }
 
   closeSharedModal() {

@@ -42,8 +42,7 @@ import { ModalComponent } from './components/modal/modal.component';
     ClickOutsideDirective,
     RegistrationComponent,
     RegistrationFormComponent,
-    ModalComponent
-
+    ModalComponent,
   ],
 
     imports: [ CommonModule, UserRoutingModule, StoreModule, SharedModule, MatStepperModule, TranslateModule, MatIconModule, MatButtonModule]

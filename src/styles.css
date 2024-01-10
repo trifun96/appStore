@@ -9,7 +9,7 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     touch-action: manipulation;
-    background-color: rgb(252, 243, 243);
+    background-color: rgb(255, 255, 255);
 }
 
 @import 'ngx-toastr/toastr';

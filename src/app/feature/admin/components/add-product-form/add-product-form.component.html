@@ -1,5 +1,5 @@
 <form [formGroup]="productForm">
-  <h1>{{isEdit ?  ("edit-product" | translate) : ("add-product" | translate)}}<h1>
+  <h1>{{isEdit ?  'Izmeni proizvod' : 'Dodaj proizvod'}}<h1>
 <div class="form-container">
   <div class="control">
     <div>
@@ -10,25 +10,35 @@
     </div>
   </div>
   <div class="control">
-    <label for="title">{{"title" | translate}}</label>
+    <label for="title">Naziv proizvoda</label>
     <input type="text" name="title" class="input" id="title" placeholder="Title" formControlName="title" />
   </div>
   <div class="control">
-    <label for="description">{{"description" | translate}}</label>
+    <label for="description">Opis proizvoda</label>
     <input type="text" name="description" class="input" id="description" placeholder="Description"
       formControlName="description" />
   </div>
 
   <div class="custom-select" style="width:400px; margin-left: 10px;">
-    <label for="description">{{"category" | translate}}</label>
+    <label for="description">Kategorija</label>
     <select formControlName="category">
       <option><p>Muskarci</p></option>
       <option><p>Zene</p></option>
     </select>
   </div>
 
+  
   <div class="custom-select" style="width:400px; margin-left: 10px;">
-    <label for="description">{{"sub-category" | translate}}</label>
+    <label for="suit-category">Kategorija odela</label>
+    <select formControlName="suitCategory">
+      <option><p>Dukserice</p></option>
+      <option><p>Majice</p></option>
+      <option><p>Pantalone</p></option>
+    </select>
+  </div>
+
+  <div class="custom-select" style="width:400px; margin-left: 10px;">
+    <label for="description">Pod kategorija</label>
     <select formControlName="subCategory">
       <option><p>Novo</p></option>
       <option><p>Staro</p></option>
@@ -37,7 +47,7 @@
   </div>
 
   <div class="custom-select" style="width:400px; margin-left: 10px;">
-    <label for="description">{{"size" | translate}}</label>
+    <label for="size">Velicina</label>
     <select formControlName="size">
       <option><p>S</p></option>
       <option><p>M</p></option>
@@ -47,18 +57,18 @@
     </select>
   </div>
   <div class="control">
-    <label for="quantity">{{"quantity" | translate}}</label>
+    <label for="quantity">Kolicina</label>
     <input type="number" id="quantity" class="input" name="quantity" min="1" max="10000"
       formControlName="quantity" />
   </div>
   <div class="control">
-    <label for="price">Price</label>
+    <label for="price">Cena</label>
     <input type="number" id="price" name="price" class="input" min="1" max="10000" formControlName="price" />
   </div>
 
   <div class="control">
     <button type="submit" class="submit-button" (click)="postProductsData()">
-      <div>{{isEdit ? ("edit-product" | translate) : ("add-product" | translate)}}</div>
+      <div>{{isEdit ?  'Izmeni proizovd' : 'Dodaj proizvod'}}</div>
     </button>
   </div>
 </div>

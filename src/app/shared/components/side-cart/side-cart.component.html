@@ -3,11 +3,11 @@
             <img class="close-img" src="assets/images/close.png" (click)="closeSideCartMenu()">
             <mat-nav-list>
                 <div class="title-container">
-                    <a class="title" mat-list-item><p>{{"total with tax" | translate}}</p></a>
+                    <a class="title" mat-list-item><p>Ukupno za plaćanje</p></a>
                     <span>{{totalPrice}} RSD</span>
                 </div>
                 <hr>
-                <p class="items-cart">{{numberOfProductInCart$ | async | pluralize: 'artical' : 'articals'}} in cart</p>
+                <p class="items-cart">{{numberOfProductInCart$ | async | pluralize: 'artikal' : 'artikla'}} u korpi</p>
                 <div class="content-side-cart" *ngFor="let data of cartItem; let i = index">
                     <img class="img" src="assets/images/close.png" (click)="removeProduct(data) ">
                     <div>
@@ -31,7 +31,7 @@
                 </div>
                     <button type="submit" class="submit-button">
                         <div class="filter-button">
-                            <p routerLink="/order-form" (click)="closeSideCartMenu()">Continue to Payment</p>
+                            <p routerLink="/order-form" (click)="closeSideCartMenu()">Nastavi sa kupovinom</p>
                         </div>
                     </button>
              

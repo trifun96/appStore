@@ -1,125 +1,134 @@
-.product-container{
-    max-width: 1550px;
-    padding: 10px 10px 60px 40px;
-    gap:2rem;
-    margin: 100px;
-    display: flex;
-    flex-wrap: wrap;
-  
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
 }
 
-.container{
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 50vh;
-    margin-top: 50px;
-  }
-  
-  .card{
-  text-align: center;
-  margin: 25px;
-  padding: 25px;
-  cursor: pointer;
-  }
+.example-card {
+  width: 20%;
+  margin: 10px;
+}
 
-  .card h3{
-    font-size: 38px;
-    font-weight: 350;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .center{
-    text-align: center;
-    border: 1px solid rgb(220, 213, 213);
-    border-radius: 10px;
-    padding: 30px;
-  }
-  
-  .center h5{
-    font-size: 25px;
-  }
-  
-  .center img{
-    width: 300px;
-  }
+.img {
+  position: relative;
+}
 
-  img{
-    width: 390px;
-  }
+img {
+  width: 100%;
+  height: auto;
+}
 
-  
-.card-title{
+.close-img img{
+  width: 12%;
+  float: right;
+  margin: 0px 4px 11px 0px;
+}
+
+.card-title {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0px 10px 0px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.card-title mat-card-subtitle {
+  flex-grow: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 7px;
+}
+
+.card-title img {
+  cursor: pointer;
+}
+
+.price-container {
+  color: #fff;
+  font-size: 14px;
+  padding: 1px;
+  background: #614848;
+  padding: 3px 20px 3px 20px;
+}
+
+.container {
+  text-align: center;
   padding: 20px;
 }
 
-.card-title img{
- width: 20px;
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.price-container{
-  padding: 12px;
-  background-color: red;
-  color:white;
-  font-size: 15px;
-}
+.add-to-cart {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
   
-  .add-to-cart{
-    background-color: rgb(174, 108, 33);
-    border: none;
+}
+
+button{
+  background-color: #1e2023;
+  color: white;
+}
+
+.empty-container{
+  margin-bottom: 50px;
+}
+@media (min-width: 768px) and (max-width: 2000px) {
+
+  .product-container{
+    margin-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  h5{
+    font-size: 25px;
+    font-weight: 500;
+    padding: 15px;
+  }
+
+  button{
+    background-color: black;
     color: white;
-    padding: 15px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .product-container{
+margin-top: 70px;
   }
 
-@media only screen and (max-width: 850px) {
-  .product-container {
-    margin: 0 auto;
-    margin-top: 140px;
-    width:1032px;
-   padding: 90px;
-}
+  .example-card {
+    width: 100%;
+  }
 
-.price-container{
-  font-size: 35px;
-  line-height: normal;
-}
-
-mat-card-subtitle{
-  font-size: 35px;
-  line-height: normal;
-}
-
-img{
-width: 500px;
-}
-
-.card-title img{
-  width: 25px;
-  height: 37px;
-}
-
-.center h5{
-  font-size: 45px;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.center h4{
-  font-size: 40px;
-  font-weight: 200;
-  line-height: normal;
-}
-
-.add-to-cart{
-  font-size: 40px;
-}
+  .card-title img{
+    width: 18px;
 
   }
+
+  .center h5{
+    font-size: 21px;
+    font-weight: 300;
+  }
+
+  .center h4{
+  font-size: 17px;
+  font-weight: 300;
+  }
+
+  button{
+    background-color: black;
+    color: white;
+  }
+  
+}

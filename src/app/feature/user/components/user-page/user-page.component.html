@@ -1,8 +1,24 @@
-<app-all-products></app-all-products>
-<router-outlet></router-outlet>
-<app-banner-page></app-banner-page>
-<app-delivery-information></app-delivery-information>
+<div class="discount-banner">
+    <div class="content">
+        <p>Kolekcija</p>
+        <h1>Jesen / Zima</h1>
+        <p>stiže</p>
+        <h4>Pripremi se...</h4>
+    </div>
+</div>
+<div class="banner-container" (click)="toNavigate()">
+    <div class="discount-banner1">
+        <h1>NOVA <br> KOLEKCIJA </h1>
+        <h5>Jesen / Zima</h5>
+        <h2>DUKSEVI</h2>
+    </div>
+
+    <div class="discount-banner2">
+        <h2>MAJICE</h2>
+        <h5>Za svakodnevne prilike.</h5>
+    </div>
+</div>
+
 <app-newsletter></app-newsletter>
 <app-footer-information></app-footer-information>
-
-
+<app-footer-component></app-footer-component>

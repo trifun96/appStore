@@ -1,6 +1,45 @@
-body {
+
+.newsletter-section {
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1e2023;
+  color: white;
+}
+
+@media (min-width: 768px) and (max-width: 2000px) {
+  body {
     font-family: 'Arial', sans-serif;
-    background-color: rgb(252, 243, 243);
+    background-color: rgb(250, 250, 250);
     margin: 0;
     padding: 0;
 }
@@ -9,11 +48,15 @@ body {
     text-align: center;
     padding: 0px 0px 70px 0px;
      width: 100%;
-    height: 25%;
-    background-color: rgb(252, 243, 243);
+    height: 35%;
+    background-color: rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
     letter-spacing: 2px;
+}
+
+.section{
+  padding: 70px;
 }
 
 h2 {
@@ -29,7 +72,7 @@ p {
 }
 
 .newsletter-form {
-    background-color: rgb(252, 243, 243);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 20px;
     margin: 20px auto;
@@ -61,83 +104,16 @@ button:hover {
     background-color: #424548;
 }
 
-@media only screen and (max-width: 600px) {
-    .newsletter-section {
-        width: 1200px;
-        height: auto; 
-        padding: 20px 10px; 
-    }
-
-    h2 {
-        font-size: 33px;
-        margin-bottom: 10px;
-        color: #333;
-    }
-
-    p {
-        font-size: 25px;
-        margin-bottom: 20px;
-        color: #666;
-    }
-
-    .newsletter-form {
-        padding: 15px;
-        margin: 10px auto;
-        max-width: 100%;
-    }
-
-    input[type="email"] {
-        width: 70%;
-        padding: 8px;
-        margin-bottom: 15px;
-        font-size: 20px;
-    }
-
-    button {
-        width: 70%;
-        padding: 8px;
-        font-size: 22px;
-    }
 }
 
+@media (max-width: 767px) {
+  .newsletter-form input,
+  .newsletter-form button {
+    width: auto;
+  }
 
-@media only screen and (max-width: 850px) {
-    .newsletter-section {
-        width: 1200px;
-        height: auto; 
-        padding: 20px 10px; 
-    }
-
-    h2 {
-        font-size: 45px;
-        margin-bottom: 10px;
-        color: #333;
-        padding: 30px;
-    }
-
-    p {
-        font-size: 35px;
-        margin-bottom: 20px;
-        margin-top: 30px;
-        color: #666;
-    }
-
-    .newsletter-form {
-        padding: 25px;
-        margin: 10px auto;
-        max-width: 100%;
-    }
-
-    input[type="email"] {
-        width: 70%;
-        padding: 15px;
-        margin-bottom: 15px;
-        font-size: 30px;
-    }
-
-    button {
-        width: 70%;
-        padding: 15px;
-        font-size: 36px;
-    }
+  .newsletter-section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }

@@ -47,7 +47,7 @@
     width: 450px;
     cursor: pointer;
     padding: 0px 16px;
-    background-color: rgb(252, 243, 243);
+    background-color: rgb(251, 251, 251);
     color: #000000;
     border: none;
     outline: none;
@@ -94,21 +94,31 @@
     display: none;
   }
 
+  @media (min-width: 768px) and (max-width: 2000px) {
+    .article-content{
+      padding: 0px 0px 10px 10px;
+    }
+  }
+
   @media (max-width: 850px) {
+
+    body{
+      width: 350px;
+    }
+    
     .expand-container {
      margin-left: 30px;
     }
   
     .expand-panel {
       margin-left: 0;
-      width: 1000px;
       border: none;
     }
   
     .expand-button {
       margin-left: 0;
-      margin-top: 60px;
       font-size: 37px;
+      width: 350px;
     }
   
     h4{
@@ -116,17 +126,16 @@
     }
 
     h6{
-        font-size:46px;
+        font-size:20px;
         font-weight: 500;
     }
 
     h3{
-        font-size: 40px;
+        font-size: 20px;
     }
 
     p{
-        font-size: 36px;
-        padding: 10px;
+        font-size: 20px;
     }
 
     .arrow{
@@ -135,23 +144,19 @@
 
     .mobileShowTitle{
         display: block;
-        font-size: 43px;
+        font-size: 20px;
         font-weight: 500;
         margin-top: 100px;
     }
   
   .expand-content {
-    padding: 16px;
+    padding: 0;
     display: flex;
     justify-content: flex-start;
   }
 
   .article-content{
-    padding: 25px;
-  }
-
-  .expand-button{
-    width:1000px;
+  padding: 0px 10px 0px 10px
   }
 
   .expand-content[_ngcontent-ng-c2333158214] img[_ngcontent-ng-c2333158214] {

@@ -9,7 +9,7 @@
                     </a>
                     <div class="filter-price">
                         <p>0$</p>
-                        <input class="custom-range" type="range" id="range" name="range" min="800" max="3000"
+                        <input class="custom-range" type="range" id="range" name="range" min="800" max="5000"
                             [ngModel]="range" (ngModelChange)="onFilter($event)" />
                         <p>{{range}}</p>
                     </div>
@@ -58,7 +58,7 @@
                     </div>
                     <button type="submit" class="submit-button" (click)="clearFilter()">
                         <div class="filter-button">
-                            <p>Clear Filter</p>
+                            <p>Obriši filtere</p>
                         </div>
                     </button>
                 </mat-nav-list>

@@ -1,60 +1,50 @@
 <div class="checkout-container">
     <div class="form-container">
         <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
-            <h5>{{"total for payment" | translate}}: <span>{{totalPrice}} RSD</span></h5>
-            <label for="email" class="required">Email:</label>
-            <input type="email" id="email" name="email" required formControlName="email">
+            <h5>Ukupno za plaćanje: <span>{{totalPrice}} RSD</span></h5>
+            <input type="email" id="email" name="email" required formControlName="email" placeholder="Email*">
 
             <div class="flex-container">
-                <div>
-                    <label for="firstName" class="required">{{"name" | translate}}:</label>
-                    <input type="text" id="firstName" name="firstName" required formControlName="name">
-                </div>
+              
+                    <input type="text" id="firstName" name="firstName" required formControlName="name" placeholder="Ime*">
+                
 
-                <div>
-                    <label for="lastName" class="required">{{"surname" | translate}}:</label>
-                    <input type="text" id="lastName" name="lastName" required formControlName="surname">
-                </div>
+               
+                    <input type="text" id="lastName" name="lastName" required formControlName="surname" placeholder="Prezime*">
+                
             </div>
 
             <div class="flex-container">
-                <div>
-                    <label for="city" class="required">{{"city" | translate}}:</label>
-                    <input type="text" id="city" name="city" required formControlName="city">
-                </div>
+               
+                    <input type="text" id="city" name="city" required formControlName="city" placeholder="Grad*">
+              
 
-                <div>
-                    <label for="postalCode" class="required">{{"zip" | translate}}:</label>
-                    <input type="text" id="postalCode" name="postalCode" required formControlName="zip">
-                </div>
+           
+                    <input type="text" id="postalCode" name="postalCode" required formControlName="zip" placeholder="Poštanski broj*">
+             
             </div>
 
-            <label for="address" class="required">{{"mobilePhone" | translate}}:</label>
-            <input id="address" name="address" required formControlName="mobilePhone">
+            <input id="address" name="address" required formControlName="mobilePhone" placeholder="Broj telefona*">
+            <div class="flex-container">
+            <input id="address" name="address" required formControlName="address" placeholder="Adresa*">
 
-
-            <label for="address" class="required">{{"address" | translate}}:</label>
-            <input id="address" name="address" required formControlName="address">
-
-            <label for="country" class="required">{{"country" | translate}}:</label>
-            <input type="text" id="country" name="country" required formControlName="country">
-
-            <label for="comment">{{"comment"| translate}}:</label>
+            <input type="text" id="country" name="country" required formControlName="country" placeholder="Država*">
+            </div>
             <textarea id="comment" name="comment" rows="4"
-                placeholder="If you want, you can leave us the desired comment, note..."
+                placeholder="Ako želite, možete ostaviti komentar o isporuci..."
                 formControlName="comment"></textarea>
 
             <div class="option-delivery">
-                <h4>{{"option for delivery" | translate}}</h4>
+                <h4>Opcije za isporuku</h4>
                 <div class="options">
-                    <p>{{"delivery on address" | translate}}</p>
-                    <p>{{"free for orders" | translate}}</p>
+                    <p>Isporuka na kućnu adresu</p>
+                    <p>Za porudzbine preko 6000, dostave je besplatna</p>
                 </div>
 
             </div>
             <button type="submit" class="submit-button">
                 <div class="filter-button">
-                    <p>{{"confirm button" | translate}}</p>
+                    <p>Potvrdite vašu porudzbinu</p>
                 </div>
             </button>
         </form>

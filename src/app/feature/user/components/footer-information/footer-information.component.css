@@ -1,15 +1,65 @@
 .wrapper {
-    width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact,
+.information,
+.service {
+  flex: 1;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  margin-right: 10px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.content {
+  max-width: 300px;
+}
+
+.img {
+  display: flex;
+  gap: 10px;
+}
+
+img {
+  max-width: 60px;
+}
+
+@media (min-width: 768px) and (max-width: 2000px) {
+
+  .wrapper {
     height:46vh;
     background-color: rgb(252, 243, 243);
     justify-content: center;
     align-items: center;
     letter-spacing: 2px;
+    padding-bottom: 40px;
   
   }
   
   .info {
-    max-width: 1400px;
+    width: 1650px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -22,9 +72,13 @@
   
   
   .info h1 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 450;
   
+  }
+
+  .info h6{
+    font-size: 14px;
   }
   
   .flex {
@@ -56,64 +110,45 @@
   .img{
     display: flex;
   }
-
-@media only screen and (max-width: 850px) {
-  .wrapper {
-      height: auto; 
-      padding: 0;
-  }
-
-  .info {
-    width: 1200px;
-      flex-direction: column; 
-      background-color: rgb(252, 243, 243);
-      padding: 20px 10px; 
-      text-align: center;
-  }
-
-  .info h1 {
-      font-size: 45px; 
-      margin-top: 30px;
-  }
-
-  .flex {
-      flex-direction: column; 
-      margin-top: 10px;
-      width: 100%; 
-  }
-
-  .flex p {
-      margin: 5px 0; 
-      font-size: 40px; 
-      text-align: center; 
-      padding: 5px;
-  }
-
-img{
-  padding: 35px;
 }
 
-  .content {
-      flex-direction: column; 
-      padding: 40px;
-      align-items: center;
+@media (max-width: 767px) {
+  .info {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .content p {
-      margin-top: 5px; 
-      font-size: 40px; 
-      text-align: center; 
+  .contact,
+  .information,
+  .service {
+    width: 100%;
   }
 
-  .content h6{
-    font-size: 38px;
+  img {
+    max-width: 14%;
+  }
+
+  
+  .wrapper{
+    text-align: center;
+    padding-bottom: 60px;
+    background-color: rgb(252, 243, 243);
+  }
+
+  .wrapper h6{
+    font-size: 15px;
     line-height: normal;
-    padding: 35px;
-    font-weight: 100;
   }
 
-  mat-icon{
-    font-size: 55px;
-    padding: 30px;
+  .wrapper h1{
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 30px;
+  }
+
+  .contact .flex{
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 }
