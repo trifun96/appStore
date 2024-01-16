@@ -64,10 +64,10 @@ export class AuthService {
     this.userLoggedIn.next(false);
   }
 
-  login({ email, password }: any): Observable<any> {
+  login({ email, password, name, surname }: any): Observable<any> {
     this.userLoggedIn.next(true);
     if (email === 'admin123@gmail.com' && password === 'admin123') {
-      const userToSave = { user: { email, password } };
+      const userToSave = { user: { email, password, name, surname } };
       this.setCurrentUser(userToSave);
 
       localStorage.setItem('role', 'admin');
@@ -80,7 +80,7 @@ export class AuthService {
     const user = this.registrationUser.find((user) => user.email === email);
 
     if (user && user.password === password) {
-      const userToSave = { user: { email, password } };
+      const userToSave = { user: { email, password, name, surname } };
       this.setCurrentUser(userToSave);
 
       this.setToken('userLoggedOn');

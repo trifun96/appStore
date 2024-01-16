@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { ApiService } from 'src/app/core/services/api-service.service';
+import { AuthService } from 'src/app/core/services/auth-service.service';
+import { IState } from 'src/app/shared/models/store.interface';
+import { authActions } from '../../store/actions';
 
 @Component({
   selector: 'app-registration-form',
@@ -6,5 +12,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./registration-form.component.css']
 })
 export class RegistrationFormComponent {
+constructor(
+  private formBuilder: FormBuilder,
+  private store:Store<IState>,
+  private auth:AuthService,
+  private apiService:ApiService,
+  ) {}
+
+  formGroup = this.formBuilder.nonNullable.group({
+    name: ['', [Validators.required]],
+    email: ['', [Validators.required]],
+    surname: ['', Validators.required],
+    password: ['', Validators.required],
+  });
+
+  onSubmit(){
+    this.formGroup.getRawValue();
+
+    const request = this.formGroup.getRawValue();
+    this.formGroup.reset();
+    
+    this.store.dispatch(authActions.registerTest({request}))
+  }
 
 }

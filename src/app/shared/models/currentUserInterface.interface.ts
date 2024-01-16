@@ -1,6 +1,6 @@
 export interface CurrentUserInterface {
     email: string
-    token: string
-    username: string
+    name: string
+    surname: string
     password:string
   }

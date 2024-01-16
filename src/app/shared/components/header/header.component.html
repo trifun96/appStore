@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" #collectionMenu>
     <div class="navbar">
         <div class="menu-toggle" *ngIf="!isShowMenu" (click)="toggleMenu()">
             <div class="bar"></div>
@@ -8,33 +8,35 @@
         <div *ngIf="isShowMenu" (click)="toggleMenu()">
             <img src="/assets/images/close.png" style="width: 25px;">
         </div>
-        <ul class="nav-menu" id="navMenu" [ngClass]="{'show': isShowMenu}">
-            <p routerLink="/product-page" (click)="closeMenu()">Proizodi</p>
-            <p routerLink="/man-collection" (click)="closeMenu()">Muškarci</p>
-            <p routerLink="/woman-collection" (click)="closeMenu()">Žene</p>
-            <p routerLink="/new-collection" (click)="closeMenu()">Novo</p>
-        </ul>
     </div>
     <div class="menu-logo">
         <div class="logo">
-            <h1>T-Shirt</h1>
-            <h2>Store</h2>
+            <h1 (click)="navigateToHome()">T-Shirt</h1>
+            <h2 (click)="navigateToHome()">Store</h2>
         </div>
     </div>
     <div class="logo">
         <div class="logo-item">
-            <h1>T-Shirt</h1>
-            <h2>Store</h2>
+            <h1 (click)="navigateToHome()">T-Shirt</h1>
+            <h2 (click)="navigateToHome()">Store</h2>
         </div>
         <div class="category" *ngIf="!isLoggedIn && !isAdmin()">
+            <p (mouseover)="openManCollectionMenu()">Muškarci</p>
+            <p (mouseover)="openWomanCollectionMenu()">Žene</p>
+        </div>
+        <div class="category" *ngIf="isLoggedIn && !isAdmin()">
             <p routerLink="/man-collection" routerLinkActive="active">Muškarci</p>
             <p routerLink="/woman-collection" routerLinkActive="active">Žene</p>
         </div>
-        <div class="category" *ngIf="isLoggedIn && !isAdmin()">
-            <p routerLink="/man-collection" routerLinkActive="active">{{"man-collection" | translate}}</p>
-            <p routerLink="/woman-collection" routerLinkActive="active">{{"woman-collection" | translate}}</p>
-        </div>
     </div>
+
+    <ng-container *ngIf="isOpenManCollectionMenu">
+        <app-man-collection-menu appClickOutside (clickOutside)="handleClickOutside()" (mouseleave)="closeManCollectionMenu()"></app-man-collection-menu>
+    </ng-container>
+
+    <ng-container *ngIf="isOpenWomanCollectionMenu">
+        <app-woman-collection-menu appClickOutside (clickOutside)="handleClickOutside()" (mouseleave)="closeWomanCollectionMenu()"></app-woman-collection-menu>
+    </ng-container>
 
     <div class="nav" *ngIf="!isLoggedIn && !isAdmin()">
         <div class="items">
@@ -61,14 +63,8 @@
         <div class="client">
             <app-dropdown-component></app-dropdown-component>
         </div>
-        <div class="dropdown">
-            <div class="dropdown-icon" (click)="toggleDropdown()">
-                <mat-icon>person_outline</mat-icon>
-            </div>
-            <div class="dropdown-content" id="dropdownContent">
-                <a>{{currentUser?.user.email}}</a>
-                <a (click)="logout()">Logout</a>
-            </div>
+        <div class="computer-responsive">
+            <app-dropdown-component></app-dropdown-component>
         </div>
     </div>
 
@@ -79,6 +75,10 @@
         </div>
         <app-dropdown-component></app-dropdown-component>
     </div>
+</div>
+
+<div *ngIf="isShowMenu">
+    <app-mobile-menu (closeEvent)="closeMenuBar()"></app-mobile-menu>
 </div>
 
 <div *ngIf="isOpenSideCart">

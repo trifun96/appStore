@@ -1,5 +1,5 @@
 <div class="form-container">
-    <form>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
         <h4>NAPRAVI NOVI NALOG</h4>
         <h5>Vaši podaci</h5>
         <div class="flex-container">

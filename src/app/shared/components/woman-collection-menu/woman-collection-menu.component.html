@@ -1,0 +1,37 @@
+
+<div class="content">
+    <mat-nav-list>
+        <div class="menu-item">
+            <div class="logo">
+                <div class="logo-item">
+                    <h1>T-Shirt</h1>
+                    <h2>Store</h2>
+                </div>
+            </div>
+            <div class="collection-item">
+                <div class="item1">
+                    <p (mouseover)="openManCollectionMenu()">Muškarci</p>
+                </div>
+                <div class="item2">
+                    <p (mouseover)="openWomanCollectionMenu()">Žene</p>
+                </div>
+            </div>
+        </div>
+        <div class="items">
+            <div class="new-collection">
+                <h1 (click)="openNewCollection()">NOVO</h1>
+            </div>
+            <div class="collection">
+                <h1 (click)="openCollection()">ŽENSKE MAJICE</h1>
+                <h1>ŽENSKI DUSKEVI</h1>
+            </div>
+        </div>
+    </mat-nav-list>
+</div>
+
+<ng-container *ngIf="isOpenManCollectionMenu">
+    <app-man-collection-menu appClickOutside (clickOutside)="handleClickOutside()" ></app-man-collection-menu>
+</ng-container>
+<ng-container *ngIf="isOpenWomanCollectionMenu">
+    <app-woman-collection-menu appClickOutside (clickOutside)="handleClickOutside()" ></app-woman-collection-menu>
+</ng-container>

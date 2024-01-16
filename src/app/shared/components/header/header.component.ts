@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { CartService } from 'src/app/core/services/cart-service.service';
 import { FavoriteService } from 'src/app/core/services/favorite-service.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('collectionMenu') collectionMenu: ElementRef;
   isLoggedIn: boolean;
   currentUser: User | null;
   totalItem$: Observable<number> = new Observable<number>();
@@ -19,6 +21,8 @@ export class HeaderComponent implements OnInit {
   public isShowMenu:boolean;
   public mobileMenu:boolean = false;
   public isOpenSideCart:boolean = false
+  isOpenManCollectionMenu:boolean = false;
+  isOpenWomanCollectionMenu:boolean = false;
 
   menuItems = [
     { label: 'Home', link: '/' },
@@ -33,6 +37,7 @@ export class HeaderComponent implements OnInit {
     private cart: CartService,
     private favoriteService: FavoriteService,
     public translate:TranslateService,
+    private router:Router,
   ) {
     translate.addLangs(['en', 'sr']);
     translate.setDefaultLang('en');
@@ -66,10 +71,14 @@ export class HeaderComponent implements OnInit {
     navMenu.style.display = (navMenu.style.display === "block") ? "none" : "block";
 }
 
-  closeMenu() {
+  closeMenu(event) {
     const navMenu = document.getElementById("navMenu");
     navMenu.style.display = "none"
     this.isShowMenu = false;
+  }
+
+  closeMenuBar() {
+    this.isShowMenu = false
   }
 
 toggleDropdown() {
@@ -89,5 +98,35 @@ toggleDropdown() {
 
   closeSideCart(){
     this.isOpenSideCart = false
+  }
+
+  openManCollectionMenu() {
+this.isOpenManCollectionMenu = true;
+  }
+
+  openWomanCollectionMenu() {
+    this.isOpenWomanCollectionMenu = true
+  }
+
+  closeManCollectionMenu() {
+    this.isOpenManCollectionMenu = false
+  }
+
+  closeWomanCollectionMenu() {
+    this.isOpenWomanCollectionMenu = false
+  }
+
+  handleClickOutside() {
+    if (this.isOpenManCollectionMenu || this.isOpenWomanCollectionMenu) {
+      const clickedInside = this.collectionMenu.nativeElement.contains(event.target);
+      if (!clickedInside) {
+        this.isOpenManCollectionMenu = false;
+        this.isOpenWomanCollectionMenu = false;
+      }
+    }
+  }
+
+  navigateToHome() {
+    this.router.navigate(['/'])
   }
 }

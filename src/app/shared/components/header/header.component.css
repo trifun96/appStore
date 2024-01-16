@@ -9,6 +9,7 @@
 .logo {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .logo-item {
@@ -81,30 +82,6 @@
   display: none; 
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-icon {
-  cursor: pointer;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.show {
-  display: block;
-}
-
-
-
 @media (min-width: 768px) and (max-width: 2000px) {
 
   .header{
@@ -117,6 +94,10 @@
 .mobile-person{
   display: block;
   font-size: 30px;
+}
+
+.computer-responsive{
+  display: block;
 }
 
 .material-icons{
@@ -134,6 +115,12 @@
 .logo{
   margin-top: 10px;
   margin-left: 50px;
+}
+
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-item{
@@ -155,13 +142,25 @@
 
 }
 
+.category p {
+  color: #000;
+  cursor: pointer;
+  padding: 7px;
+  transition: background-color 0.3s, padding 0.3s;
+}
+
+.category p:hover {
+  background-color: rgb(0, 0, 0);
+  color: #fff; 
+  padding: 7px;
+}
+
 .menuTab{
   margin-right: 50px;
 }
 
 
 }
-
 
 @media (max-width: 767px) {
   .navbar {
@@ -180,6 +179,10 @@
     display: none;
   }
 
+  .computer-responsive{
+    display: none;
+  }
+
   .menu-toggle {
     display: block;
   }
@@ -190,18 +193,6 @@
 
   .items{
     display: none;
-  }
-
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .nav-menu p {
-    margin-right: 0;
-    margin-bottom: 10px;
   }
 
   .mobile-person {
@@ -226,10 +217,9 @@
   
 .nav-menu {
     display: none;
-    flex-direction: column;
     position: absolute;
     background-color: #ffffff;
-    width: 441px;
+    width: 457px;
     height: 100vh;
     left: -27px;
     z-index: 10000;
@@ -244,11 +234,17 @@
     display: block;
 }
 
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-menu p{
-    font-size: 20px;
+    font-size: 23px;
     line-height: normal;
     text-decoration: none;
-    margin: 20px 35px 20px 35px;
+    margin: 30px 30px 0px 35px;
 }
 
 .logo{
@@ -261,6 +257,16 @@
 
 .logo h2{
     font-size: 30px;
+}
+
+.material-icons{
+  font-size: 30px;
+}
+
+.show{
+  display: flex !important;
+  justify-content: space-between !important;
+  font-variant-caps: all-petite-caps;
 }
 
 
