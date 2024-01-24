@@ -124,6 +124,10 @@ export class ProductComponent {
     this.products = this.originalProducts;
   }
 
+  acceptFilters(){
+    this.showSideNav = false;
+  }
+
   onCloseSideBar() {
     this.showSideNav = false;
   }

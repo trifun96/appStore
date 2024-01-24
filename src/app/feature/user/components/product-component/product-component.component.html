@@ -15,7 +15,7 @@
         </div>
         <ng-container *ngIf="showSideNav">
             <app-side-nav appClickOutside (clickOutside)="handleClickOutside()" (clearFilters)="clearAllFilters()"
-                (closeEvent)="onCloseSideBar()" (priceFilterChanged)="onChangeFilterPrice($event)"
+                (closeEvent)="onCloseSideBar()" (acceptFilters)="acceptFilters()" (priceFilterChanged)="onChangeFilterPrice($event)"
                 (subCategoryChange)="applyFilterByCategory($event)"
                 (sizeFilterChange)="applyFilterBySize($event)"></app-side-nav>
         </ng-container>

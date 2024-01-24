@@ -132,7 +132,7 @@ p {
 .product-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 20px;
   }
 
@@ -193,7 +193,7 @@ p {
   }
 
   .home-content{
-    margin:0px 0px 70px 100px;
+    margin:0px 0px 90px 0px;
   }
 
   h3{
@@ -351,6 +351,10 @@ p {
     height: 50vh;
     width:41%;
 }
+
+.home-content{
+    margin:0px 0px 90px 130px;
+  }
 
 @media (max-width: 767px) {
     .discount-banner {

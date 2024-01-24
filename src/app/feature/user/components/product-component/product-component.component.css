@@ -34,7 +34,7 @@ mat-icon {
 .product-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: normal;
   padding: 20px;
   margin-top: 80px;
 }
@@ -53,7 +53,6 @@ mat-icon {
 
 .container {
   position: relative;
-  background-color: rgb(252, 243, 243);
 }
 
 .container img {
@@ -143,6 +142,15 @@ mat-icon {
   .search-container {
     padding: 10px;
   }
+
+  
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  margin-top: 80px;
+}
 
   .form__field {
     width: 90%;

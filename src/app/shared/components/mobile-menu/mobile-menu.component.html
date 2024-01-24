@@ -9,27 +9,21 @@
         <div class="show-menu">
             <ng-container *ngIf="isShowManMobileMenu">
                 <div class="flex">
-                <p (click)="redirectToManTshirtCollection()" (click)="closeMenuBar()">Muške majice</p>
-                <mat-icon>keyboard_arrow_right</mat-icon>
+                <p (click)="redirectToManTshirtCollection()" (click)="closeMenuBar()">Muške Majice</p>
+           
             </div>
             
             <div class="flex">
-                <p (click)="redirectToManSweatshirtCollection()" (click)="closeMenuBar()">Muški duksevi</p>
-                <mat-icon>keyboard_arrow_right</mat-icon>
+                <p (click)="redirectToManSweatshirtCollection()" (click)="closeMenuBar()">Muške Pantalone</p>
+           
             </div>
             </ng-container>
 
             <ng-container *ngIf="isShowWomanMobileMenu">
                 <div class="flex">
                     <p (click)="redirectToWomanTshirtCollection()" (click)="closeMenuBar()">Ženske majice</p>
-                    <mat-icon>keyboard_arrow_right</mat-icon>
-                </div>
                
-                <div class="flex">
-                    <p (click)="redirectToWomanSweatshirtCollection()" (click)="closeMenuBar()">Ženski duksevi</p>
-                    <mat-icon>keyboard_arrow_right</mat-icon>
                 </div>
-              
             </ng-container>
         </div>
     </div>

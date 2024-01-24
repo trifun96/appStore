@@ -33,7 +33,6 @@ import { ClickOutsideDirective } from 'src/app/shared/directives/clickOutside.di
 import { WomanCollectionMenuComponent } from './components/woman-collection-menu/woman-collection-menu.component';
 import { ManCollectionMenuComponent } from './components/man-collection-menu/man-collection-menu.component';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
-
 @NgModule({
   declarations: [HeaderComponent, WomanCollectionMenuComponent, MobileMenuComponent, ManCollectionMenuComponent, DeliveryInformationComponent, ClickOutsideDirective, FooterComponent, SearchMessageComponent, SideNavComponent, ProductDetailComponent, EmptyCardComponent, ProductModalComponent, DropdownComponent, SideCartComponent, ExpandPanelComponent, PluralizePipe],
   imports: [

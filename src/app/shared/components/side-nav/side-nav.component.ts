@@ -9,6 +9,7 @@ export class SideNavComponent {
   @Output() priceFilterChanged = new EventEmitter<any>();
   @Output() clearFilters = new EventEmitter<void>();
   @Output() closeEvent = new EventEmitter<boolean>();
+  @Output() acceptFilters = new EventEmitter<boolean>();
   @Output() subCategoryChange = new EventEmitter<{
     checked: boolean;
     subCategory: string;
@@ -37,5 +38,9 @@ export class SideNavComponent {
   clearFilter() {
     this.clearFilters.emit();
     this.closeEvent.emit();
+  }
+
+  acceptFilter(){
+    this.acceptFilters.emit();
   }
 }

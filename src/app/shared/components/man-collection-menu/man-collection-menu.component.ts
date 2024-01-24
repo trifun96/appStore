@@ -27,4 +27,8 @@ this.router.navigate(['man-collection'])
   openNewCollection(){
     this.router.navigate(['new-collection'])
   }
+
+  openSweatshirtManCollection() {
+    this.router.navigate(['man-sweatshirt'])
+  }
 }

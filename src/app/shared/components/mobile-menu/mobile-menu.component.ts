@@ -30,13 +30,13 @@ export class MobileMenuComponent {
     this.router.navigate(['man-collection'])
   }
 
-  redirectToManSweatshirtCollection() {}
+  redirectToManSweatshirtCollection() {
+    this.router.navigate(['man-sweatshirt'])
+  }
 
   redirectToWomanTshirtCollection(){
     this.router.navigate(['woman-collection'])
   }
-
-  redirectToWomanSweatshirtCollection(){}
 
   closeMenuBar() {
   this.closeEvent.emit(false)

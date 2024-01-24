@@ -9,6 +9,7 @@ import { ManCollectionComponent } from './components/man-collection/man-collecti
 import { WomanCollectionComponent } from './components/woman-collection/woman-collection.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ManSweatshirtComponent } from './components/man-sweatshirt/man-sweatshirt.component';
+import { WomanSweatshirtComponent } from './components/woman-sweatshirt/woman-sweatshirt.component';
 
 const routes: Routes = [
   {path:'login', component:RegistrationComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'man-collection', component:ManCollectionComponent},
   {path:'woman-collection', component:WomanCollectionComponent},
   {path:'man-sweatshirt', component:ManSweatshirtComponent},
+  {path:'woman-sweatshirt', component:WomanSweatshirtComponent},
   {path:'', redirectTo:'/product-page', pathMatch:'full'},
 ];
 

@@ -3,16 +3,10 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 350px;
   background-color: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
-  padding: 10px;
-  position: fixed;
-}
-
-mat-nav-list .title {
-  text-align: center;
+  padding: 0;
 }
 
 .col-price {
@@ -105,38 +99,63 @@ mat-nav-list .title {
   margin-bottom: 20px;
 }
 
-.submit-button {
-  position: absolute;
-  background-color: #333;
-  color: rgb(0, 0, 0);
-  bottom: 70px;
-  width: 50%;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 18px;
-
-
-}
-
-.filter-button {
-  margin-top: 8px;
-  color: white;
-}
-
-.side-buttons {
+.button-container {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-evenly;
+}
+
+.responsive-button{
+  background-color: white;
+  color: black;
+  font-weight: 700;
+}
+
+.responsive-buttonOne{
+  background-color: black;
+  color: white;
+  font-weight: 700;
 }
 
 @media (min-width: 768px) and (max-width: 2000px) {
   .col-price {
     font-weight: 200;
   }
+
+  .checkbox-container{
+    margin-bottom: 45px;
+    margin-left: 10px;
+  }
+
+  .content{
+    position: fixed;
+    width: 550px;
+  }
+
+  .title p{
+    text-align: center;
+  }
+
+
+  .button-container {
+    position: relative;
+    display: flex;
+    justify-content:space-evenly;
+    margin-bottom: 10px;
+    bottom: 0;
+    top: 200px;
+}
+
+.responsive-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
   
   .filter-price {
     display: flex;
     text-align: center;
     color: black;
+    margin-left: 15px;
   }
   
   .filter-price p {
@@ -161,44 +180,34 @@ mat-nav-list .title {
 }
 
 @media (max-width: 767px) {
-  .content {
-    width: 100%; 
-    height: auto;
-    bottom: 0;
-    top: 56px; 
-    box-shadow: none;
-    padding: 15px; 
-  }
 
   .filter-menu {
     margin-top: 10px; 
   }
 
-  .submit-button {
-    width: 70%;
-    bottom: 33px;
-    margin-left: 35px;
+  .button-container {
+    top: 180px;
 }
 
-  .submit-button p {
-    margin: 10px 0px 10px;
-  }
+  .responsive-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
 
-  .filter-button {
-    margin-top: 0; 
-  }
-
-  .side-buttons {
-    flex-direction: column; 
-    margin-top: 15px; 
+.button-container{
+  display: flex;
+  position: relative;
 }
 
 .content {
   height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 411px;
   background-color: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
@@ -206,8 +215,10 @@ mat-nav-list .title {
   position: fixed;
 }
 
-mat-nav-list .title {
+mat-nav-list .title  p{
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .col-price {
@@ -238,4 +249,17 @@ mat-nav-list .title {
 .custom-checkbox label {
 color: black;
 }
+}
+
+
+@media (max-width: 375px) {
+  .button-container{
+    top: 8px;
+  }
+
+  mat-nav-list .title  p{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
 }

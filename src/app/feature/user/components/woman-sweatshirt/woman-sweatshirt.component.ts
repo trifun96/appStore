@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ApiService } from 'src/app/core/services/api-service.service';
 import { ProductInterface } from 'src/app/shared/models/productInterface.interdace';
 
 @Component({
-  selector: 'app-man-sweatshirt',
-  templateUrl: './man-sweatshirt.component.html',
-  styleUrls: ['./man-sweatshirt.component.css'],
+  selector: 'app-woman-sweatshirt',
+  templateUrl: './woman-sweatshirt.component.html',
+  styleUrls: ['./woman-sweatshirt.component.css']
 })
-export class ManSweatshirtComponent implements OnInit {
+export class WomanSweatshirtComponent {
   constructor(
     private apiService: ApiService,
     private spinner: NgxSpinnerService
   ) {}
-  manSweatshirtCollection: ProductInterface[];
+  womanSweatshirtCollection: ProductInterface[];
   filteredProducts: ProductInterface[];
 
   ngOnInit() {
@@ -28,8 +28,8 @@ export class ManSweatshirtComponent implements OnInit {
           id: key,
           ...res[key],
         }));
-        this.manSweatshirtCollection = this.filteredProducts.filter(
-          (element) => element.suitCategory === 'Pantalone'
+        this.womanSweatshirtCollection = this.filteredProducts.filter(
+          (element) => element.category === 'Muskarci' && element.suitCategory === 'Dukserice'
         );
       },
       (error) => console.error(error),

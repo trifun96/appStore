@@ -23,6 +23,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ManSweatshirtComponent } from './components/man-sweatshirt/man-sweatshirt.component';
+import { WomanSweatshirtComponent } from './components/woman-sweatshirt/woman-sweatshirt.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { ModalComponent } from './components/modal/modal.component';
     RegistrationComponent,
     RegistrationFormComponent,
     ModalComponent,
+    ManSweatshirtComponent,
+    WomanSweatshirtComponent,
   ],
 
     imports: [ CommonModule, UserRoutingModule, StoreModule, SharedModule, MatStepperModule, TranslateModule, MatIconModule, MatButtonModule]
