@@ -22,10 +22,7 @@ export class ProductDetailComponent implements OnInit {
   public selectedSize: string = '';
 
   ngOnInit(): void {
-
-    console.log(this.data, 'data')
     const sizes = document.querySelectorAll('.circle-icon');
-
     sizes.forEach((size) => {
       size.addEventListener('click', function () {
         size.classList.toggle('clicked');
@@ -34,6 +31,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   toSelectedSize(size: string) {
+    const sizes = document.querySelectorAll('.circle-icon');
+    sizes.forEach((element) => {
+      element.classList.remove('clicked');
+    });
     this.selectedSize = size;
   }
 
