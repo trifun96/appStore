@@ -15,6 +15,8 @@ export class ManSweatshirtComponent implements OnInit {
   ) {}
   manSweatshirtCollection: ProductInterface[];
   filteredProducts: ProductInterface[];
+  titleOfCollection:string = 'Muske pantalone';
+  totalCountOfCollection:number;
 
   ngOnInit() {
     this.showSpinner();
@@ -31,6 +33,7 @@ export class ManSweatshirtComponent implements OnInit {
         this.manSweatshirtCollection = this.filteredProducts.filter(
           (element) => element.suitCategory === 'Pantalone'
         );
+        this.totalCountOfCollection = this.manSweatshirtCollection.length;
       },
       (error) => console.error(error),
       () => this.hideSpinner()

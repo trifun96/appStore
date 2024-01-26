@@ -20,23 +20,24 @@
                 (sizeFilterChange)="applyFilterBySize($event)"></app-side-nav>
         </ng-container>
     </div>
+    <!-- <div class="title-of-collection">{{titleOfCollection}} <p>({{totalCountOfCollection}})</p></div> -->
     <div class="product-container">
-        <mat-card class="example-card" *ngFor="let data of products | paginate: { itemsPerPage: 8, currentPage: page }">
+        <mat-card class="example-card" *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: page }">
             <div class="container">
-                <img [src]="data.image" (click)="openProductDetailModal(data)">
+                <img [src]="product.image" (click)="openProductDetailModal(product)">
                 <div class="card-title">
-                    <mat-card-subtitle>{{data.title}}</mat-card-subtitle>
-                    <div class="heart-icon" title="Add to favorite" (click)="addToFavorite(data)">favorite_border</div>
+                    <mat-card-subtitle>{{product.title}}</mat-card-subtitle>
+                    <div class="heart-icon" title="Add to favorite" (click)="addToFavorite(product)">favorite_border</div>
                 </div>
-                <span class="price-container">{{data.price}} RSD</span>
+                <span class="price-container">{{product.price}} RSD</span>
             </div>
         </mat-card>
         <div *ngIf="products && products.length === 0">
             <app-search-message></app-search-message>
         </div>
-        <div class="paginator" *ngIf="products && products.length !== 0 && products.length > 8 ">
-            <pagination-controls (pageChange)="page = $event"></pagination-controls>
-        </div>
+    </div>
+    <div class="paginator" *ngIf="products && products.length !== 0 && products.length > 8 ">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
     </div>
 </div>
 
@@ -44,6 +45,7 @@
 <div *ngIf="showProductDetail">
     <app-modal (closeEvent)="closeSharedModal()">
         <app-product-detail [data]="selectedProduct"
-            (closeProductModal)="closeSharedModal($event)"></app-product-detail>
+            (closeProductModal)="closeSharedModal($event)">
+        </app-product-detail>
     </app-modal>
 </div>

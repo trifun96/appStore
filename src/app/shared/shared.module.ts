@@ -33,6 +33,7 @@ import { ClickOutsideDirective } from 'src/app/shared/directives/clickOutside.di
 import { WomanCollectionMenuComponent } from './components/woman-collection-menu/woman-collection-menu.component';
 import { ManCollectionMenuComponent } from './components/man-collection-menu/man-collection-menu.component';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
+
 @NgModule({
   declarations: [HeaderComponent, WomanCollectionMenuComponent, MobileMenuComponent, ManCollectionMenuComponent, DeliveryInformationComponent, ClickOutsideDirective, FooterComponent, SearchMessageComponent, SideNavComponent, ProductDetailComponent, EmptyCardComponent, ProductModalComponent, DropdownComponent, SideCartComponent, ExpandPanelComponent, PluralizePipe],
   imports: [
@@ -56,6 +57,6 @@ import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.compon
     ToastrModule.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
   ],
-   exports:[RouterModule, ReactiveFormsModule, DeliveryInformationComponent, MobileMenuComponent, WomanCollectionMenuComponent, ManCollectionMenuComponent, ExpandPanelComponent, ClickOutsideDirective, MatListModule, ToastrModule, MatMenuModule, MatSidenavModule, MatFormFieldModule, MatToolbarModule, MatCardModule, NgIf, MatPaginatorModule, MatSidenavModule, NgxPaginationModule, NgxSpinnerModule, FormsModule, PluralizePipe, HttpClientModule, MatIconModule,MatButtonModule,CommonModule, HeaderComponent, FooterComponent, SearchMessageComponent, SideNavComponent, ProductDetailComponent, EmptyCardComponent, ProductModalComponent, DropdownComponent]
+   exports:[RouterModule, ReactiveFormsModule, DeliveryInformationComponent, MobileMenuComponent, WomanCollectionMenuComponent, ManCollectionMenuComponent, ExpandPanelComponent, ClickOutsideDirective, MatListModule, ToastrModule, MatMenuModule, MatSidenavModule, MatFormFieldModule, MatToolbarModule, MatCardModule, NgIf, MatPaginatorModule, MatSidenavModule, NgxPaginationModule, NgxSpinnerModule, FormsModule, PluralizePipe, HttpClientModule, MatIconModule,MatButtonModule,CommonModule, HeaderComponent, FooterComponent, SearchMessageComponent, SideNavComponent, ProductDetailComponent, EmptyCardComponent, ProductModalComponent, DropdownComponent,]
 })
 export class SharedModule { }

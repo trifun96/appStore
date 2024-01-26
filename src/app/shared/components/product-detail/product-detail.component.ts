@@ -92,4 +92,8 @@ export class ProductDetailComponent implements OnInit {
     this.favoriteService.addFavoriteItem(favoriteData);
     this.toastr.success('You are successfully added product to favorite.');
   }
+
+  closeButton(){
+    this.closeProductModal.emit(true);
+  }
 }

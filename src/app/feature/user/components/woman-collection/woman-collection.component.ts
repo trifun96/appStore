@@ -12,6 +12,8 @@ export class WomanCollectionComponent implements OnInit {
   constructor(private api: ApiService, private spinner: NgxSpinnerService) {}
   public womenCollectionItem: ProductInterface[];
   public filteredProducts: ProductInterface[];
+  titleOfCollection:string = 'Zenske majice'
+  totalCountOfCollection:number;
 
   ngOnInit() {
     this.showSpinner();
@@ -28,6 +30,7 @@ export class WomanCollectionComponent implements OnInit {
         this.womenCollectionItem = this.filteredProducts.filter(
           (element) => element.category === 'Zene'
         );
+        this.totalCountOfCollection = this.womenCollectionItem.length
       },
       (error) => console.error(error),
       () => this.hideSpinner()

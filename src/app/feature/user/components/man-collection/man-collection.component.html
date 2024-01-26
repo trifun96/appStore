@@ -1,8 +1,7 @@
 <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-scale-multiple" [fullScreen] = "true"><p style="color: white" >Loading...</p></ngx-spinner>
 <div class="container">
-    <app-product-component [products]="manCollectionItem"></app-product-component>
+    <app-product-component [products]="manCollectionItem" [titleOfCollection]="titleOfCollection" [totalCountOfCollection]="totalCountOfCollection"></app-product-component>
 </div>
 <app-banner-page></app-banner-page>
 <app-newsletter></app-newsletter>
 <app-delivery-information></app-delivery-information>
-<app-footer-information></app-footer-information>

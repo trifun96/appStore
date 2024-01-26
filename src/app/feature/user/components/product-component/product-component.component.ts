@@ -16,6 +16,8 @@ import { ProductInterface } from 'src/app/shared/models/productInterface.interda
 export class ProductComponent {
   @ViewChild('sideNav') sideNav: ElementRef;
   @Input() public products: ProductInterface[];
+  @Input() public titleOfCollection: string;
+  @Input() public totalCountOfCollection: number;
   public filterProducts: ProductInterface[];
   public originalProducts: ProductInterface[];
   public selectedCategories: string[] = [];
@@ -137,6 +139,7 @@ export class ProductComponent {
       this.showProductDetail = true;
       this.selectedProduct = product;
     }
+
   }
 
   closeSharedModal() {

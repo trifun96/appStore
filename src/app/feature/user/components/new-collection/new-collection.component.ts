@@ -11,7 +11,9 @@ import { ProductInterface } from 'src/app/shared/models/productInterface.interda
 export class NewCollectionComponent implements OnInit{
   constructor(private apiService:ApiService, private spinner:NgxSpinnerService) {}
   newCollectionItems:ProductInterface[];
-  filteredProducts:ProductInterface[]
+  filteredProducts:ProductInterface[];
+  titleOfCollection:string = 'Nova kolekcija'
+  totalCountOfCollection:number;
 
   ngOnInit() {
     this.showSpinner();
@@ -28,6 +30,7 @@ export class NewCollectionComponent implements OnInit{
         this.newCollectionItems = this.filteredProducts.filter(
           (element) => element.subCategory === 'Novo'
         );
+        this.totalCountOfCollection = this.newCollectionItems.length
       },
       (error) => console.error(error),
       () => this.hideSpinner()

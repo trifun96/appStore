@@ -7,6 +7,7 @@
   color: #fff;
 }
 
+
 .form__field {
   width: 100%;
   padding: 12px;
@@ -27,6 +28,10 @@
   align-items: center;
 }
 
+.filter-button p{
+  font-weight: 700;
+}
+
 mat-icon {
   margin-right: 5px;
 }
@@ -36,7 +41,7 @@ mat-icon {
   flex-wrap: wrap;
   justify-content: normal;
   padding: 20px;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .example-card {
@@ -80,23 +85,49 @@ mat-icon {
 }
 
 .paginator {
-  margin-top: 20px;
-  margin-right: 50px;
+position: absolute;
 }
+
+.title-of-collection{
+  position: absolute;
+  display: flex;
+}
+
+#search::placeholder {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
 
 @media (min-width: 768px) and (max-width: 2000px) {
   .search-container .mat-icon{
     display: block;
   }
 
+  .title-of-collection{
+    position: absolute;
+    padding: 89px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .title-of-collection p {
+    font-weight: 300;
+  }
+
   .search-container{
     background-color: rgb(255, 255, 255);
   }
 
-  .product-container{
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: normal;
+    padding: 70px;
     padding-bottom: 70px;
+    margin-top: 70px;
   }
-
 
   .main-container{
     margin-top: 100px;
@@ -135,6 +166,21 @@ mat-icon {
   .example-card{
     width: 400px;
   }
+
+  .paginator {
+    margin-top: 20px;
+    margin-right: 50px;
+  }
+
+  .filter-button p{
+    font-size: 16px;
+  }
+
+  .paginator{
+    position:absolute;
+    display: flex;
+    width: 1500px;
+  }
   
 }
 
@@ -145,11 +191,8 @@ mat-icon {
 
   
 .product-container {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
-  padding: 20px;
-  margin-top: 80px;
+
 }
 
   .form__field {
@@ -180,4 +223,9 @@ mat-icon {
   overflow: hidden;
   font-size: 35px;
 }
+
+.title-of-collection{
+display: none;
+}
+
 }

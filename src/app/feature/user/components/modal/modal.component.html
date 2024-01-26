@@ -1,8 +1,5 @@
-<div id="myModal" class="modal" (click)="closeButton()">
+<div id="myModal" class="modal">
     <div class="modal-content" (click)="preventModalClose($event)">
-      <div class="modal-close">
-        <img src="/assets/images/close.png" (click)="closeButton()" />
-      </div>
       <ng-content></ng-content>
     </div>
   </div>

@@ -12,6 +12,8 @@ export class ManCollectionComponent implements OnInit{
   constructor(private api:ApiService, private spinner:NgxSpinnerService){}
   manCollectionItem:ProductInterface[];
   filteredProducts:ProductInterface[];
+  titleOfCollection:string = 'Muske majice';
+  totalCountOfCollection:number;
 
   ngOnInit() {
     this.showSpinner();
@@ -28,6 +30,7 @@ export class ManCollectionComponent implements OnInit{
         this.manCollectionItem = this.filteredProducts.filter(
           (element) => element.category === 'Muskarci'
         );
+        this.totalCountOfCollection = this.manCollectionItem.length;
       },
       (error) => console.error(error),
       () => this.hideSpinner()
