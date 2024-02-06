@@ -31,7 +31,7 @@ export class ManSweatshirtComponent implements OnInit {
           ...res[key],
         }));
         this.manSweatshirtCollection = this.filteredProducts.filter(
-          (element) => element.suitCategory === 'Pantalone'
+          (element) => element.suitCategory === 'Majice'
         );
         this.totalCountOfCollection = this.manSweatshirtCollection.length;
       },

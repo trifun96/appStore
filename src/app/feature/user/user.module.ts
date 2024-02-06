@@ -24,7 +24,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ManSweatshirtComponent } from './components/man-sweatshirt/man-sweatshirt.component';
-import { WomanSweatshirtComponent } from './components/woman-sweatshirt/woman-sweatshirt.component';
+import { ManPantsComponent } from './components/man-pants/man-pants.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { WomanSweatshirtComponent } from './components/woman-sweatshirt/woman-sw
     RegistrationFormComponent,
     ModalComponent,
     ManSweatshirtComponent,
-    WomanSweatshirtComponent,
+    ManPantsComponent,
   ],
 
     imports: [ CommonModule, UserRoutingModule, StoreModule, SharedModule, MatStepperModule, TranslateModule, MatIconModule, MatButtonModule]

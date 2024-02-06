@@ -4,17 +4,19 @@ import { ApiService } from 'src/app/core/services/api-service.service';
 import { ProductInterface } from 'src/app/shared/models/productInterface.interdace';
 
 @Component({
-  selector: 'app-woman-sweatshirt',
-  templateUrl: './woman-sweatshirt.component.html',
-  styleUrls: ['./woman-sweatshirt.component.css']
+  selector: 'app-man-pants',
+  templateUrl: './man-pants.component.html',
+  styleUrls: ['./man-pants.component.css']
 })
-export class WomanSweatshirtComponent {
+export class ManPantsComponent {
   constructor(
     private apiService: ApiService,
     private spinner: NgxSpinnerService
   ) {}
-  womanSweatshirtCollection: ProductInterface[];
+  manPantsCollection: ProductInterface[];
   filteredProducts: ProductInterface[];
+  titleOfCollection:string = 'Muske pantalone';
+  totalCountOfCollection:number;
 
   ngOnInit() {
     this.showSpinner();
@@ -28,9 +30,10 @@ export class WomanSweatshirtComponent {
           id: key,
           ...res[key],
         }));
-        this.womanSweatshirtCollection = this.filteredProducts.filter(
-          (element) => element.category === 'Muskarci' && element.suitCategory === 'Dukserice'
+        this.manPantsCollection = this.filteredProducts.filter(
+          (element) => element.suitCategory === 'Pantalone'
         );
+        this.totalCountOfCollection = this.manPantsCollection.length;
       },
       (error) => console.error(error),
       () => this.hideSpinner()

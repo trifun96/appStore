@@ -8,15 +8,20 @@
     <div class="product-info">
         <h2>{{data.title}}</h2>
         <p>{{data.description}}</p>
-        <h2>{{data.price}} RSD</h2>
+        <h2>{{data.price}},00 RSD</h2>
+        <div class="second-image">
+          <img [src]="data.image">
+        </div>
         <h3>Veličine</h3>
-        <h5 class="circle-icon" id="small" (click)="toSelectedSize('S')">S</h5>
-        <h5 class="circle-icon" id="medium" (click)="toSelectedSize('M')">M</h5>
-        <h5 class="circle-icon" id="large" (click)="toSelectedSize('L')">L</h5>
-        <h5 class="circle-icon" id="extra-large" (click)="toSelectedSize('XL')">XL</h5>
-        <h5 class="circle-icon" id="extra-extra-large" (click)="toSelectedSize('XXL')">XXL</h5>
+        <div style="margin-top: 25px;">
+          <h5 class="circle-icon" id="small" (click)="toSelectedSize('S')">S</h5>
+          <h5 class="circle-icon" id="medium" (click)="toSelectedSize('M')">M</h5>
+          <h5 class="circle-icon" id="large" (click)="toSelectedSize('L')">L</h5>
+          <h5 class="circle-icon" id="extra-large" (click)="toSelectedSize('XL')">XL</h5>
+          <h5 class="circle-icon" id="extra-extra-large" (click)="toSelectedSize('XXL')">XXL</h5>
+        </div>
         <div class="button-container">
-            <button class="custom-button" (click)="addToCartItem(data)">Dodaj u korpu</button>
+            <button class="custom-button1" (click)="addToCartItem(data)">Dodaj u korpu</button>
             <button class="custom-button" (click)="buyNowProduct(data)">Kupi odmah</button>
             <span class="heart-icon" title="Dodaj u omiljene" (click)="addToFavorite(data)">favorite_border</span>
           </div>
@@ -26,9 +31,18 @@
         <img src="/assets/images/close.png" (click)="closeButton()" />
       </div>
       <div class="info-container">
-        <p>Besplatna<br> dostava</p>
-        <p>2 dana <br> isporuka</p>
-        <p>Povrat do <br> 14 dana</p>
+        <div class="flex">
+          <mat-icon>local_shipping</mat-icon>
+          <p>Besplatna<br> dostava</p>
+        </div>
+        <div class="flex">
+          <mat-icon>date_range</mat-icon>
+          <p>2 dana <br> isporuka</p>
+        </div>
+    <div class="flex">
+      <mat-icon>arrow_back</mat-icon>
+      <p>Povrat do <br> 14 dana</p>
+    </div>
       </div>
     </div>
  

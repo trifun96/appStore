@@ -41,7 +41,6 @@ mat-icon {
   flex-wrap: wrap;
   justify-content: normal;
   padding: 20px;
-  margin-top: 40px;
 }
 
 .example-card {
@@ -85,7 +84,8 @@ mat-icon {
 }
 
 .paginator {
-position: absolute;
+  margin-top: 20px;
+  margin-right: 50px;
 }
 
 .title-of-collection{
@@ -126,7 +126,6 @@ position: absolute;
     justify-content: normal;
     padding: 70px;
     padding-bottom: 70px;
-    margin-top: 70px;
   }
 
   .main-container{
@@ -169,17 +168,11 @@ position: absolute;
 
   .paginator {
     margin-top: 20px;
-    margin-right: 50px;
+    margin-left: 720px;
   }
 
   .filter-button p{
     font-size: 16px;
-  }
-
-  .paginator{
-    position:absolute;
-    display: flex;
-    width: 1500px;
   }
   
 }

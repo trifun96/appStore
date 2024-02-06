@@ -25,7 +25,11 @@ export class UserPageComponent {
     this.currentProduct = this.productService.getPreviousProduct();
   }
 
-  toNavigate(){
+  toPantsNavigate(){
+    this.router.navigate(['/man-pants'])
+  }
+
+  toSweatshirtNavigate() {
     this.router.navigate(['/man-sweatshirt'])
   }
 }

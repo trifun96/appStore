@@ -69,7 +69,6 @@ h3 {
 
 .button-container {
     display: flex;
-    padding: 10px;
     margin-top: 100px;
 }
 
@@ -77,6 +76,18 @@ h3 {
     padding: 10px 20px;
     margin: 10px;
     background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.custom-button1{
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4f4747;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -143,17 +154,19 @@ h1 {
     font-size: 20px;
 }
 
+h3{
+    margin: 0;
+}
+
 .modal-close-mobile-menu img {
     display: none;
 }
 
 .info-container {
-    margin-top: 210px;
     display: flex;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
     color: black;
-    padding: 40px;
     border-radius: 10px;
 }
 
@@ -167,9 +180,31 @@ h1 {
     flex-direction: column;
 }
 
+.flex{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-image img{
+    margin: 0;
+    padding: 0;
+    width: 80px;
+}
+
 @media (min-width: 768px) and (max-width: 2000px) {
     .wrapper {
         display: none;
+    }
+
+    .second-image img{
+        margin-top: 30px;
+    }
+
+    h3{
+        margin-top: 35px;
     }
 
     .product-container {
@@ -178,7 +213,7 @@ h1 {
     }
 
     .product-info {
-        padding: 100px;
+        padding: 110px;
     }
 
     .product-image img {
@@ -186,11 +221,30 @@ h1 {
         height: 100%;
         padding: 15px;
     }
+
+    .flex p{
+        margin-top: 10px;
+    }
+
+    
+.info-container {
+    margin-top: 270px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
 }
 
 @media (max-width: 767px) {
     .product-container {
         flex-direction: column;
+    }
+
+    .second-image img{
+        margin-top: 5px;
     }
 
     .product-info {
@@ -215,6 +269,9 @@ h1 {
         margin-top: 20px;
     }
 
+    h3{
+        margin-top: 30px;
+    }
 
     h5 {
         font-weight: 500;

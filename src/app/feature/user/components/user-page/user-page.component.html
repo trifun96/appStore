@@ -7,19 +7,20 @@
         
     </div>
 </div>
-<div class="banner-container" (click)="toNavigate()">
+<div class="banner-container" (click)="toPantsNavigate()">
     <div class="discount-banner1">
         <h1>NOVA <br> KOLEKCIJA </h1>
         <h5>Jesen / Zima</h5>
-        <h2>DUKSEVI</h2>
+        <h2>PANTALONE</h2>
     </div>
 
-    <div class="discount-banner2">
+    <div class="discount-banner2" (click)="toSweatshirtNavigate()">
         <h2>MAJICE</h2>
         <h5>Za svakodnevne prilike.</h5>
     </div>
 </div>
 <app-banner-page></app-banner-page>
+<!-- <app-carousel></app-carousel> -->
 <app-newsletter></app-newsletter>
 <app-delivery-information></app-delivery-information>
 <app-footer-component></app-footer-component>
