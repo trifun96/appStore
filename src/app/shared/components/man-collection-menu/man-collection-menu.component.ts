@@ -7,8 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./man-collection-menu.component.css']
 })
 export class ManCollectionMenuComponent {
-  isOpenManCollectionMenu:boolean = false;
-  isOpenWomanCollectionMenu:boolean = false;
+  isOpenManCollectionMenu:boolean;
+  isOpenWomanCollectionMenu:boolean;
+  isOpenDropDown:boolean;
 
   constructor(private router:Router) {}
 
@@ -24,11 +25,11 @@ this.isOpenManCollectionMenu = true
 this.router.navigate(['man-collection'])
   }
 
-  openNewCollection(){
-    this.router.navigate(['new-collection'])
+  openSweatshirtManCollection() {
+    this.router.navigate(['man-pants'])
   }
 
-  openSweatshirtManCollection() {
-    this.router.navigate(['man-sweatshirt'])
+  openDropdown(){
+    this.isOpenDropDown = !this.isOpenDropDown;
   }
 }

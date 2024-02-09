@@ -2,65 +2,95 @@
   <div class="modal-close-mobile-menu">
     <img src="/assets/images/close.png" (click)="closeButton()" />
   </div>
-    <div class="product-image">
-        <img src="{{data.image}}" alt="Product Image">
+  <div class="product-image">
+    <img src="{{data.image}}" alt="Product Image">
+  </div>
+  <div class="product-info">
+    <h2>{{data.title}}</h2>
+    <p>{{data.description}}</p>
+    <h2>{{data.price}},00 RSD</h2>
+    <div class="second-image">
+      <img [src]="data.image">
     </div>
-    <div class="product-info">
-        <h2>{{data.title}}</h2>
-        <p>{{data.description}}</p>
-        <h2>{{data.price}},00 RSD</h2>
-        <div class="second-image">
-          <img [src]="data.image">
-        </div>
-        <h3>Veličine</h3>
-        <div style="margin-top: 25px;">
-          <h5 class="circle-icon" id="small" (click)="toSelectedSize('S')">S</h5>
-          <h5 class="circle-icon" id="medium" (click)="toSelectedSize('M')">M</h5>
-          <h5 class="circle-icon" id="large" (click)="toSelectedSize('L')">L</h5>
-          <h5 class="circle-icon" id="extra-large" (click)="toSelectedSize('XL')">XL</h5>
-          <h5 class="circle-icon" id="extra-extra-large" (click)="toSelectedSize('XXL')">XXL</h5>
-        </div>
-        <div class="button-container">
-            <button class="custom-button1" (click)="addToCartItem(data)">Dodaj u korpu</button>
-            <button class="custom-button" (click)="buyNowProduct(data)">Kupi odmah</button>
-            <span class="heart-icon" title="Dodaj u omiljene" (click)="addToFavorite(data)">favorite_border</span>
-          </div>
-    </div>
-    <div class="main-container">
-      <div class="modal-close">
-        <img src="/assets/images/close.png" (click)="closeButton()" />
-      </div>
-      <div class="info-container">
-        <div class="flex">
-          <mat-icon>local_shipping</mat-icon>
-          <p>Besplatna<br> dostava</p>
-        </div>
-        <div class="flex">
-          <mat-icon>date_range</mat-icon>
-          <p>2 dana <br> isporuka</p>
-        </div>
-    <div class="flex">
-      <mat-icon>arrow_back</mat-icon>
-      <p>Povrat do <br> 14 dana</p>
-    </div>
+    <h3>Veličine</h3>
+    <div style="margin-top: 25px;">
+      <div *ngIf="data?.suitCategory === 'Majice'">
+        <h5 class="circle-icon" id="small" [ngClass]="{'clicked': selectedSize === 'S'}" (click)="toSelectedSize('S')">S
+        </h5>
+        <h5 class="circle-icon" id="medium" [ngClass]="{'clicked': selectedSize === 'M'}" (click)="toSelectedSize('M')">
+          M</h5>
+        <h5 class="circle-icon" id="large" [ngClass]="{'clicked': selectedSize === 'L'}" (click)="toSelectedSize('L')">L
+        </h5>
+        <h5 class="circle-icon" id="extra-large" [ngClass]="{'clicked': selectedSize === 'XL'}"
+          (click)="toSelectedSize('XL')">XL</h5>
+        <h5 class="circle-icon" id="extra-extra-large" [ngClass]="{'clicked': selectedSize === 'XXL'}"
+          (click)="toSelectedSize('XXL')">XXL</h5>
       </div>
     </div>
- 
-    <div class="wrapper">
-      <div class="info">
-        <div class="flex">
-          <h5>ROK ISPORUKE DO<br>
-            2 RADNA DANA</h5>
-        </div>
-        <div class="flex">
-          <h5>BESPLATNA DOSTAVA ZA PORUDŽBINE NA SAJTU<br>
-            ZA IZNOS PREKO 6.000 RSD
-            </h5>
-        </div>
-        <div class="flex">
-          <h6>POVRAT ROBE<br>
-            U ROKU OD 14 DANA</h6>
-        </div>
+    <div style="margin-top: 25px;">
+      <div *ngIf="data?.suitCategory=== 'Cizme'">
+        <h5 class="circle-icon" id="size-38" [ngClass]="{'clicked': selectedSize === '38'}"
+          (click)="toSelectedSize('38')">38</h5>
+        <h5 class="circle-icon" id="size-39" [ngClass]="{'clicked': selectedSize === '39'}"
+          (click)="toSelectedSize('39')">39</h5>
+        <h5 class="circle-icon" id="size-40" [ngClass]="{'clicked': selectedSize === '40'}"
+          (click)="toSelectedSize('40')">40</h5>
+        <h5 class="circle-icon" id="size-41" [ngClass]="{'clicked': selectedSize === '41'}"
+          (click)="toSelectedSize('41')">41</h5>
+        <h5 class="circle-icon" id="size-42" [ngClass]="{'clicked': selectedSize === '42'}"
+          (click)="toSelectedSize('42')">42</h5>
       </div>
     </div>
+    <div style="margin-top: 25px;">
+      <div *ngIf="data?.suitCategory=== 'Pantalone'">
+        <h5 class="circle-icon" [ngClass]="{'clicked': selectedSize === '50'}" (click)="toSelectedSize('50')">50</h5>
+        <h5 class="circle-icon" [ngClass]="{'clicked': selectedSize === '52'}" (click)="toSelectedSize('52')">52</h5>
+        <h5 class="circle-icon" [ngClass]="{'clicked': selectedSize === '54'}" (click)="toSelectedSize('54')">54</h5>
+        <h5 class="circle-icon" [ngClass]="{'clicked': selectedSize === '56'}" (click)="toSelectedSize('56')">56</h5>
+        <h5 class="circle-icon" [ngClass]="{'clicked': selectedSize === '58'}" (click)="toSelectedSize('58')">58</h5>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="custom-button1" (click)="addToCartItem(data)">Dodaj u korpu</button>
+      <button class="custom-button" (click)="buyNowProduct(data)">Kupi odmah</button>
+      <span class="heart-icon" title="Dodaj u omiljene" (click)="addToFavorite(data)">favorite_border</span>
+    </div>
+  </div>
+  <div class="main-container">
+    <div class="modal-close">
+      <img src="/assets/images/close.png" (click)="closeButton()" />
+    </div>
+    <div class="info-container">
+      <div class="flex">
+        <mat-icon>local_shipping</mat-icon>
+        <p>Besplatna<br> dostava</p>
+      </div>
+      <div class="flex">
+        <mat-icon>date_range</mat-icon>
+        <p>2 dana <br> isporuka</p>
+      </div>
+      <div class="flex">
+        <mat-icon>arrow_back</mat-icon>
+        <p>Povrat do <br> 14 dana</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="info">
+      <div class="flex">
+        <h5>ROK ISPORUKE DO<br>
+          2 RADNA DANA</h5>
+      </div>
+      <div class="flex">
+        <h5>BESPLATNA DOSTAVA ZA PORUDŽBINE NA SAJTU<br>
+          ZA IZNOS PREKO 6.000 RSD
+        </h5>
+      </div>
+      <div class="flex">
+        <h6>POVRAT ROBE<br>
+          U ROKU OD 14 DANA</h6>
+      </div>
+    </div>
+  </div>
 </div>

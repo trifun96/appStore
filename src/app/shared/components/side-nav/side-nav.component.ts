@@ -43,4 +43,8 @@ export class SideNavComponent {
   acceptFilter(){
     this.acceptFilters.emit();
   }
+
+  closeFilterMenu(){
+    this.closeEvent.emit();
+  }
 }

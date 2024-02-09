@@ -10,9 +10,8 @@ export class MobileMenuComponent {
   @Output() closeEvent = new EventEmitter<boolean>();
   isShowManMobileMenu: boolean = false;
   isShowWomanMobileMenu: boolean = false;
+  isOpenDropDown:boolean;
   
-
-
   constructor(private router:Router){
   }
 
@@ -30,8 +29,8 @@ export class MobileMenuComponent {
     this.router.navigate(['man-collection'])
   }
 
-  redirectToManSweatshirtCollection() {
-    this.router.navigate(['man-sweatshirt'])
+  redirectToPantCollection() {
+    this.router.navigate(['man-pants'])
   }
 
   redirectToWomanTshirtCollection(){
@@ -40,5 +39,9 @@ export class MobileMenuComponent {
 
   closeMenuBar() {
   this.closeEvent.emit(false)
+  }
+
+  openDropdown(){
+    this.isOpenDropDown = !this.isOpenDropDown;
   }
 }

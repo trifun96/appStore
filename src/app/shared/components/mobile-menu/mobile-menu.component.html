@@ -8,21 +8,25 @@
         </ul>
         <div class="show-menu">
             <ng-container *ngIf="isShowManMobileMenu">
-                <div class="flex">
-                <p (click)="redirectToManTshirtCollection()" (click)="closeMenuBar()">Muške Majice</p>
-           
+                <div class="flex" (click)="openDropdown()">
+                    <p>Muška obuća</p>
+                    <div class="icons">
+                        <mat-icon *ngIf="!isOpenDropDown">arrow_forward</mat-icon> 
+                        <mat-icon *ngIf="isOpenDropDown">arrow_downward</mat-icon>
+                    </div>
             </div>
-            
-            <div class="flex">
-                <p (click)="redirectToManSweatshirtCollection()" (click)="closeMenuBar()">Muške Pantalone</p>
-           
+            <div class="dropdown-item" *ngIf="isOpenDropDown">
+                <div class="flex">
+                    <p (click)="redirectToManTshirtCollection()" (click)="closeMenuBar()">Muške Majice</p>
+                </div>
+                <div class="flex">
+                    <p (click)="redirectToPantCollection()" (click)="closeMenuBar()">Muške Pantalone</p>
+                </div>
             </div>
             </ng-container>
-
             <ng-container *ngIf="isShowWomanMobileMenu">
                 <div class="flex">
                     <p (click)="redirectToWomanTshirtCollection()" (click)="closeMenuBar()">Ženske Čizme</p>
-               
                 </div>
             </ng-container>
         </div>

@@ -19,8 +19,17 @@
         </div>
         <div class="items">
             <div class="collection">
-                <h1 (click)="openCollection()">MUŠKE MAJICE</h1>
-                <h1 (click)="openSweatshirtManCollection()">MUŠKE PANTALONE</h1>
+                <div class="flex" (click)="openDropdown()">
+                    <h1>Muška obuća</h1>
+                    <div class="icons">
+                        <mat-icon *ngIf="!isOpenDropDown">arrow_forward</mat-icon> 
+                        <mat-icon *ngIf="isOpenDropDown">arrow_downward</mat-icon>
+                    </div>
+            </div>
+                <div *ngIf="isOpenDropDown">
+                    <h1 (click)="openCollection()">MUŠKE MAJICE</h1>
+                    <h1 (click)="openSweatshirtManCollection()">MUŠKE PANTALONE</h1>
+                </div>
             </div>
         </div>
     </mat-nav-list>
