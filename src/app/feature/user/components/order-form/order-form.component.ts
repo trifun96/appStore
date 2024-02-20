@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/core/services/api-service.service';
 import { CartService } from 'src/app/core/services/cart-service.service';
 import { OrderInterface } from 'src/app/shared/models/order.interface';
@@ -18,12 +17,12 @@ export class OrderFormComponent implements OnInit {
     private cartService: CartService,
     private toast: ToastrService,
     private router: Router,
-    private api:ApiService,
+    private api: ApiService
   ) {}
   public cartItemList: ProductInterface[] = [];
   public cartItem: ProductInterface;
   private orderModelObject: OrderInterface = new OrderInterface();
-  public totalPrice:number
+  public totalPrice: number;
 
   ngOnInit(): void {
     this.cartService.getProducts().subscribe((res) => {
@@ -56,13 +55,19 @@ export class OrderFormComponent implements OnInit {
     this.orderModelObject.zip = this.orderForm.value.zip;
     this.orderModelObject.comment = this.orderForm.value.comment;
     this.orderModelObject.products = this.cartItemList;
-    console.log(this.orderModelObject)
-    const request:OrderInterface = this.orderModelObject;
+
+    const request: OrderInterface = this.orderModelObject;
     this.api.postOrders(request).subscribe(() => {
       this.toast.success('You have successfully ordered your product.');
       this.router.navigate(['product-page']);
       this.orderForm.reset();
-    })
-    
+    });
+
+    this.removeItemsFromCart();
+  }
+
+  removeItemsFromCart() {
+    this.cartService.totalItem$.next(0);
+    localStorage.removeItem('cartItems');
   }
 }

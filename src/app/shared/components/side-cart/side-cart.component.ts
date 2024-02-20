@@ -24,10 +24,8 @@ this.totalPrice = this.cartService.calculateTotalPrice();
 getCartItems() {
 this.cartService.getProducts().subscribe((response) => {
   this.cartItem = response;
-  console.log(this.cartItem, 'test')
 })
 }
-
 
 removeProduct(cartItem: ProductInterface) {
   this.cartService.removeFromCart(cartItem);

@@ -19,16 +19,16 @@
                 <p class="sort">Sortiranje</p>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox" (change)="onCheckboxChange($event, 'Novo')" />
-                <label for="customCheckbox">Novo</label>
+                <input type="checkbox" id="Novo" [checked]="checkedCategories['Novo']" (change)="onCheckboxChange($event, 'Novo')" />
+                <label for="Novo">Novo</label>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox1" (change)="onCheckboxChange($event, 'Staro')" />
-                <label for="customCheckbox1">Staro</label>
+                <input type="checkbox" id="Staro" [checked]="checkedCategories['Staro']" (change)="onCheckboxChange($event, 'Staro')" />
+                <label for="Staro">Staro</label>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox2" (change)="onCheckboxChange($event, 'Outlet')" />
-                <label for="customCheckbox2">Outlet</label>
+                <input type="checkbox" id="Outlet" [checked]="checkedCategories['Outlet']" (change)="onCheckboxChange($event, 'Outlet')" />
+                <label for="Outlet">Outlet</label>
             </div>
         </div>
         <div class="checkbox-container">
@@ -36,23 +36,23 @@
                 <p class="size">Velicina</p>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox3" (change)="onCheckboxSelectSize($event, 'S')" />
+                <input type="checkbox" id="customCheckbox3" [checked]="checkedSizes['S']" (change)="onCheckboxSelectSize($event, 'S')" />
                 <label for="customCheckbox3">S</label>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox4" (change)="onCheckboxSelectSize($event, 'M')" />
+                <input type="checkbox" id="customCheckbox4" [checked]="checkedSizes['M']" (change)="onCheckboxSelectSize($event, 'M')" />
                 <label for="customCheckbox4">M</label>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox5" (change)="onCheckboxSelectSize($event, 'L')" />
+                <input type="checkbox" id="customCheckbox5" [checked]="checkedSizes['L']" (change)="onCheckboxSelectSize($event, 'L')" />
                 <label for="customCheckbox5">L</label>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox6" (change)="onCheckboxSelectSize($event, 'XL')" />
+                <input type="checkbox" id="customCheckbox6" [checked]="checkedSizes['XL']" (change)="onCheckboxSelectSize($event, 'XL')" />
                 <label for="customCheckbox6">XL</label>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox7" (change)="onCheckboxSelectSize($event, 'XXL')" />
+                <input type="checkbox" id="customCheckbox7" [checked]="checkedSizes['XXL']" (change)="onCheckboxSelectSize($event, 'XXL')" />
                 <label for="customCheckbox7">XXL</label>
             </div>
         </div>
