@@ -134,6 +134,10 @@ img{
     margin-left: 10px;
   }
 
+  .checkbox-container p{
+    color: black !important;
+  }
+
   .content{
     position: fixed;
     width: 550px;
@@ -182,7 +186,7 @@ img{
   }
   
   .custom-checkbox label {
-  color: black;
+  color: black !important;
   }
   
 }

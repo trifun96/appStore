@@ -49,7 +49,6 @@ export class HeaderComponent implements OnInit {
     this.authService.currentUser$.subscribe((currentUser) => {
       this.currentUser = currentUser;
       this.isLoggedIn = currentUser ? true : false;
-      console.log(this.authService.isLoggedIn(), 'dal je pozvan');
 
       if (currentUser) {
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
@@ -69,6 +68,7 @@ export class HeaderComponent implements OnInit {
     this.isShowMenu = !this.isShowMenu
     var navMenu = document.getElementById("navMenu");
     navMenu.style.display = (navMenu.style.display === "block") ? "none" : "block";
+    console.log('test1')
 }
 
   closeMenu(event) {
@@ -80,11 +80,6 @@ export class HeaderComponent implements OnInit {
   closeMenuBar() {
     this.isShowMenu = false
   }
-
-toggleDropdown() {
-  var dropdownContent = document.getElementById("dropdownContent");
-  dropdownContent.classList.toggle("show");
-}
 
   logout() {
     this.authService.logout();

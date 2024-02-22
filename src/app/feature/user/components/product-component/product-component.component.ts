@@ -7,6 +7,7 @@ import { FavoriteService } from 'src/app/core/services/favorite-service.service'
 
 import { productAction } from 'src/app/feature/admin/store/actions';
 import { ProductInterface } from 'src/app/shared/models/productInterface.interdace';
+import { ProductSize } from 'src/app/shared/models/productSizes.interface';
 
 @Component({
   selector: 'app-product-component',
@@ -18,6 +19,7 @@ export class ProductComponent {
   @Input() public products: ProductInterface[];
   @Input() public titleOfCollection: string;
   @Input() public totalCountOfCollection: number;
+  @Input() public values:ProductSize;
   public filterProducts: ProductInterface[];
   public originalProducts: ProductInterface[];
   public selectedCategories: string[] = [];
@@ -60,10 +62,10 @@ export class ProductComponent {
   }
 
   onChangeFilterPrice(event: any) {
-    this.products = this.filterProducts.filter((value) => value.price >= event);
+    this.products = this.filterProducts.filter((value) => value.price <= event);
     this.selectedPrice = event;
     this.applyFilters();
-  }
+}
 
   applyFilterByCategory(eventData: { checked: boolean; subCategory: string }) {
     const checked = eventData.checked;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ApiService } from 'src/app/core/services/api-service.service';
 import { ProductInterface } from 'src/app/shared/models/productInterface.interdace';
+import { ProductSize } from 'src/app/shared/models/productSizes.interface';
 
 @Component({
   selector: 'app-man-collection',
@@ -14,6 +15,14 @@ export class ManCollectionComponent implements OnInit{
   filteredProducts:ProductInterface[];
   titleOfCollection:string = 'Muske majice';
   totalCountOfCollection:number;
+
+  values: ProductSize = {
+    sizeOne: 'S',
+    sizeTwo: 'M',
+    sizeThree: 'L',
+    sizeFour: 'XL',
+    sizeFive: 'XXL',
+  };
 
   ngOnInit() {
     this.showSpinner();

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ProductSize } from '../../models/productSizes.interface';
 
 @Component({
   selector: 'app-side-nav',
@@ -6,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./side-nav.component.css'],
 })
 export class SideNavComponent implements OnInit {
-  @Input() values: string[];
+  @Input() values: ProductSize;
   @Output() priceFilterChanged = new EventEmitter<any>();
   @Output() clearFilters = new EventEmitter<void>();
   @Output() closeEvent = new EventEmitter<boolean>();
@@ -30,11 +31,12 @@ export class SideNavComponent implements OnInit {
     this.checkedSizes = JSON.parse(
       localStorage.getItem('selectedSize') || '{}'
     );
-    console.log(this.values, 'test');
+    this.range = parseInt(localStorage.getItem('selectedPrice') || '0');
   }
 
   onFilter(price: number) {
     this.range = price;
+    localStorage.setItem('selectedPrice', price.toString());
     this.priceFilterChanged.emit(price);
   }
 
@@ -61,6 +63,7 @@ export class SideNavComponent implements OnInit {
     this.closeEvent.emit();
     localStorage.removeItem('selectedCategories');
     localStorage.removeItem('selectedSize');
+    localStorage.removeItem('selectedPrice');
   }
 
   acceptFilter() {

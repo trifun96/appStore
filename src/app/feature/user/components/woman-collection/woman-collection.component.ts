@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ApiService } from 'src/app/core/services/api-service.service';
 import { ProductInterface } from 'src/app/shared/models/productInterface.interdace';
+import { ProductSize } from 'src/app/shared/models/productSizes.interface';
 
 @Component({
   selector: 'app-woman-collection',
@@ -12,8 +13,15 @@ export class WomanCollectionComponent implements OnInit {
   constructor(private api: ApiService, private spinner: NgxSpinnerService) {}
   public womenCollectionItem: ProductInterface[];
   public filteredProducts: ProductInterface[];
-  titleOfCollection:string = 'Zenske majice'
-  totalCountOfCollection:number;
+  titleOfCollection: string = 'Zenske majice';
+  totalCountOfCollection: number;
+  values: ProductSize = {
+    sizeOne: '38',
+    sizeTwo: '39',
+    sizeThree: '40',
+    sizeFour: '41',
+    sizeFive: '42',
+  };
 
   ngOnInit() {
     this.showSpinner();
@@ -30,7 +38,7 @@ export class WomanCollectionComponent implements OnInit {
         this.womenCollectionItem = this.filteredProducts.filter(
           (element) => element.category === 'Zene'
         );
-        this.totalCountOfCollection = this.womenCollectionItem.length
+        this.totalCountOfCollection = this.womenCollectionItem.length;
       },
       (error) => console.error(error),
       () => this.hideSpinner()

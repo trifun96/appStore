@@ -10,7 +10,7 @@
         </a>
         <div class="filter-price">
             <p>0$</p>
-            <input class="custom-range" type="range" id="range" name="range" min="800" max="5000" [ngModel]="range"
+            <input class="custom-range" type="range" id="range" name="range" min="800" max="8000" [ngModel]="range"
                 (ngModelChange)="onFilter($event)" />
             <p>{{range}}</p>
         </div>
@@ -33,27 +33,27 @@
         </div>
         <div class="checkbox-container">
             <div>
-                <p class="size">Velicina</p>
+                <p class="size">Sortiranje</p>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox3" [checked]="checkedSizes['S']" (change)="onCheckboxSelectSize($event, 'S')" />
-                <label for="customCheckbox3">S</label>
+                <input type="checkbox" id="customCheckbox3" [checked]="checkedSizes[values.sizeOne]" (change)="onCheckboxSelectSize($event, values.sizeOne)" />
+                <label for="customCheckbox3">{{values.sizeOne}}</label>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox4" [checked]="checkedSizes['M']" (change)="onCheckboxSelectSize($event, 'M')" />
-                <label for="customCheckbox4">M</label>
+                <input type="checkbox" id="customCheckbox4" [checked]="checkedSizes[values.sizeTwo]" (change)="onCheckboxSelectSize($event, values.sizeTwo)" />
+                <label for="customCheckbox4">{{values.sizeTwo}}</label>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox5" [checked]="checkedSizes['L']" (change)="onCheckboxSelectSize($event, 'L')" />
-                <label for="customCheckbox5">L</label>
+                <input type="checkbox" id="customCheckbox5" [checked]="checkedSizes[values.sizeThree]" (change)="onCheckboxSelectSize($event, values.sizeThree)" />
+                <label for="customCheckbox5">{{values.sizeThree}}</label>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox6" [checked]="checkedSizes['XL']" (change)="onCheckboxSelectSize($event, 'XL')" />
-                <label for="customCheckbox6">XL</label>
+                <input type="checkbox" id="customCheckbox6" [checked]="checkedSizes[values.sizeFour]" (change)="onCheckboxSelectSize($event, values.sizeFour)" />
+                <label for="customCheckbox6">{{values.sizeFour}}</label>
             </div>
             <div class="custom-checkbox">
-                <input type="checkbox" id="customCheckbox7" [checked]="checkedSizes['XXL']" (change)="onCheckboxSelectSize($event, 'XXL')" />
-                <label for="customCheckbox7">XXL</label>
+                <input type="checkbox" id="customCheckbox7" [checked]="checkedSizes[values.sizeFive]" (change)="onCheckboxSelectSize($event,  values.sizeFive)" />
+                <label for="customCheckbox7">{{values.sizeFive}}</label>
             </div>
         </div>
     </mat-nav-list>

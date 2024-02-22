@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ApiService } from 'src/app/core/services/api-service.service';
 import { ProductInterface } from 'src/app/shared/models/productInterface.interdace';
+import { ProductSize } from 'src/app/shared/models/productSizes.interface';
 
 @Component({
   selector: 'app-man-pants',
@@ -17,6 +18,14 @@ export class ManPantsComponent {
   filteredProducts: ProductInterface[];
   titleOfCollection:string = 'Muske pantalone';
   totalCountOfCollection:number;
+
+  values: ProductSize = {
+    sizeOne: '50',
+    sizeTwo: '52',
+    sizeThree: '54',
+    sizeFour: '56',
+    sizeFive: '58',
+  };
 
   ngOnInit() {
     this.showSpinner();

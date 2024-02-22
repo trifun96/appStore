@@ -17,7 +17,7 @@
             <app-side-nav appClickOutside (clickOutside)="handleClickOutside()" (clearFilters)="clearAllFilters()"
                 (closeEvent)="onCloseSideBar()" (acceptFilters)="acceptFilters()" (priceFilterChanged)="onChangeFilterPrice($event)"
                 (subCategoryChange)="applyFilterByCategory($event)"
-                (sizeFilterChange)="applyFilterBySize($event)"></app-side-nav>
+                (sizeFilterChange)="applyFilterBySize($event)" [values]="values"></app-side-nav>
         </ng-container>
     </div>
     <!-- <div class="title-of-collection">{{titleOfCollection}} <p>({{totalCountOfCollection}})</p></div> -->
