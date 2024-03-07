@@ -40,7 +40,7 @@ export class ProductDetailComponent implements OnInit {
 
   addToCartItem(product: ProductInterface) {
     if (!this.selectedSize) {
-      this.toastr.warning('Please select a size before adding to the cart.');
+      this.toastr.warning('Molimo vas da prvo izaberete velicinu pa nakon toga proizvod dodajte u korpu.');
       return;
     }
 
@@ -71,7 +71,7 @@ export class ProductDetailComponent implements OnInit {
 
     this.selectedSize = '';
     this.closeProductModal.emit();
-    this.toastr.success('You have successfully added the product to the cart.');
+    this.toastr.success('Uspesno ste dodali proizvod u korpu.');
   }
 
   buyNowProduct(data: ProductInterface) {
@@ -84,13 +84,13 @@ export class ProductDetailComponent implements OnInit {
       this.closeProductModal.emit();
       this.router.navigate(['/order-form']);
     } else {
-      this.toastr.warning('Please select a size before going to payment');
+      this.toastr.warning('Molimo vas da prvo izaberete velicinu pa nakon toga proizvod dodajte u korpu.');
     }
   }
 
   addToFavorite(favoriteData: ProductInterface) {
     this.favoriteService.addFavoriteItem(favoriteData);
-    this.toastr.success('You are successfully added product to favorite.');
+    this.toastr.success('Uspesno ste dodali proizvod u omiljene.');
   }
 
   closeButton(){

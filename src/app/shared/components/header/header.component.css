@@ -68,7 +68,6 @@
 
 .material-icons {
   font-size: 24px;
-  margin-right: 10px;
   cursor: pointer;
 }
 
@@ -82,12 +81,21 @@
   display: none; 
 }
 
+.flex{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (min-width: 768px) and (max-width: 2000px) {
 
   .header{
     margin: 0 auto;
   }
   .items{
+    display: none;
+  }
+  .flex{
     display: none;
   }
 
@@ -171,6 +179,11 @@
     display: block;
 }
 
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+
   .logo-item{
     display: none;
   }
@@ -197,8 +210,7 @@
 
   .mobile-person {
     display: block;
-    margin-right: 5px;
-    margin-top: 8px;
+    margin-top: 5px;
   }
 
   .items {
@@ -252,15 +264,18 @@
 }
 
 .logo h1{
-    font-size: 25px;
+    font-size: 30px;
+    font-weight: 400;
 }
 
 .logo h2{
-    font-size: 30px;
+    font-size: 35px;
+    font-weight: 400;
 }
 
 .material-icons{
   font-size: 30px;
+  padding: 3px;
 }
 
 .show{
@@ -268,6 +283,4 @@
   justify-content: space-between !important;
   font-variant-caps: all-petite-caps;
 }
-
-
 }

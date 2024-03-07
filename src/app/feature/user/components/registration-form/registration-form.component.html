@@ -1,4 +1,7 @@
 <div class="form-container">
+    <div (click)="closeRegistrationForm()">
+        <img src="/assets/images/close.png" style="width: 25px; cursor: pointer;">
+    </div>
     <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
         <h4>NAPRAVI NOVI NALOG</h4>
         <h5>Vaši podaci</h5>

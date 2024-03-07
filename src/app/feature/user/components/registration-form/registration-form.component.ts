@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ApiService } from 'src/app/core/services/api-service.service';
@@ -12,11 +12,10 @@ import { authActions } from '../../store/actions';
   styleUrls: ['./registration-form.component.css']
 })
 export class RegistrationFormComponent {
+  @Output() closeEvent = new EventEmitter<boolean>(false);
 constructor(
   private formBuilder: FormBuilder,
   private store:Store<IState>,
-  private auth:AuthService,
-  private apiService:ApiService,
   ) {}
 
   formGroup = this.formBuilder.nonNullable.group({
@@ -35,4 +34,8 @@ constructor(
     this.store.dispatch(authActions.registerTest({request}))
   }
 
+
+  closeRegistrationForm() {
+    this.closeEvent.emit(true);
+  }
 }

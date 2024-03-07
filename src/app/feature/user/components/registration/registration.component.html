@@ -35,6 +35,6 @@
 
 <div *ngIf="isShowRegistrationForm">
     <app-modal (closeEvent)="closeRegistrationModal()">
-        <app-registration-form></app-registration-form>
+        <app-registration-form (closeEvent)="closeRegistrationModal()"></app-registration-form>
     </app-modal>
 </div>

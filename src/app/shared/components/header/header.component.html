@@ -5,11 +5,16 @@
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
-        <div *ngIf="isShowMenu" (click)="toggleMenu()">
-            <img src="/assets/images/close.png" style="width: 25px;">
+        <div class="flex" *ngIf="isShowMenu">
+            <div class="menu-logo">
+                <div class="logo">
+                    <h1 (click)="navigateToHome()">T-Shirt</h1>
+                    <h2 (click)="navigateToHome()">Store</h2>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="menu-logo">
+    <div class="menu-logo" *ngIf="!isShowMenu">
         <div class="logo">
             <h1 (click)="navigateToHome()">T-Shirt</h1>
             <h2 (click)="navigateToHome()">Store</h2>
@@ -38,7 +43,7 @@
         <app-woman-collection-menu appClickOutside (clickOutside)="handleClickOutside()" (mouseleave)="closeWomanCollectionMenu()"></app-woman-collection-menu>
     </ng-container>
 
-    <div class="nav" *ngIf="!isLoggedIn && !isAdmin()">
+    <div class="nav" *ngIf="!isLoggedIn && !isAdmin() && !isShowMenu">
         <div class="items">
             <div class="person">
                 <mat-icon a routerLink="/login">person</mat-icon>
@@ -75,10 +80,14 @@
         </div>
         <app-dropdown-component></app-dropdown-component>
     </div>
+    <div *ngIf="isShowMenu" (click)="toggleMenu()">
+        <img src="/assets/images/close.png" style="width: 18px;">
+    </div>
 </div>
 
+
 <div *ngIf="isShowMenu">
-    <app-mobile-menu (closeEvent)="closeMenuBar()"></app-mobile-menu>
+    <app-mobile-menu (closeEvent)="closeMenuBar()" (submitEvent)="closeMenu()"></app-mobile-menu>
 </div>
 
 <div *ngIf="isOpenSideCart">

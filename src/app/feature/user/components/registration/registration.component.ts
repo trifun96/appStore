@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth-service.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit{
   public isShowRegistrationForm:boolean = false
 
   constructor(
@@ -35,6 +35,8 @@ export class RegistrationComponent {
     if (this.auth.isLoggedIn()) {
       this.router.navigate(['admin-products']);
     }
+
+    this.auth.getRegistrationUsers();
   }
 
   loginForm = this.fb.nonNullable.group({
